@@ -1,21 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emma's Site</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <header>
+        <h1 class="header-text">emma's enterprises</h1>
+    </header>
     <main>
         <!-- Left gutter -->
         <div class="gutter" id="gutter-left">
+            <a href="http://extrapractice.space"><img class="gutter-ad" src="/images/XP.gif"></a>
+            <img class="gutter-ad" src="images/empty-ad.png" alt="">
+            <img class="gutter-ad" src="images/empty-ad.png" alt="">
         </div>
 
         <!-- Center columns -->
         <div id="columns">
             <div id="col-one">
-                <div class="block">quick links / list</div>
+                <div class="block">
+                    <div class="title-bar">quick links / list</div>
+                    <ul>
+                        <li><a href="https://www.google.com">Link 1</a></li>
+                        <li><a href="https://www.google.com">Link 2</a></li>
+                        <li><a href="https://www.google.com">Link 3</a></li>
+                        <li><a href="https://www.google.com">Link 4</a></li>
+                        <li><a href="https://www.google.com">Link 5</a></li>
+                    </ul>
+
+
+                </div>
                 <div class="block">one image</div>
                 <div class="block">image grid</div>
                 <div class="block">video / youtube or vimeo embeding</div>
@@ -24,7 +43,15 @@
             </div>
             <div id="col-two">
                 <div class="block"></div>
-                <div class="block"></div>
+                <div class="block">
+                    <div class="video-block">
+                        <iframe
+                            src="https://player.vimeo.com/video/295825378?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                            width="533" height="300" frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="NERO"></iframe>
+                    </div>
+                </div>
+
                 <div class="block"></div>
                 <div class="block"></div>
                 <div class="block"></div>
@@ -38,19 +65,16 @@
                 <div class="block"></div>
                 <div class="block"></div>
             </div>
-            <div id="col-four">
-                <div class="block"></div>
-                <div class="block"></div>
-                <div class="block"></div>
-                <div class="block"></div>
-                <div class="block"></div>
-                <div class="block"></div>
-            </div>
+
         </div>
 
         <!-- Right gutter -->
         <div class="gutter" id="gutter-right">
+            <img class="gutter-ad" src="images/empty-ad.png" alt="">
+            <img class="gutter-ad" src="images/EHN.gif" alt="">
+            <img class="gutter-ad" src="images/empty-ad.png" alt="">
         </div>
     </main>
 </body>
+
 </html>
