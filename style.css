@@ -3,17 +3,17 @@
 *:after {
   box-sizing: border-box;
 }
+
 body {
   font-family: "Times New Roman", Times, serif;
   margin: 0;
   padding: 20px;
+  background-color: rgb(243, 243, 243);
 }
 
 .header-text {
-  font-family: Arial Black, Arial, sans-serif;
   font-size: 2em;
-  color: lightgrey;
-  transform: scaleY(1.7);
+  color: rgb(0, 0, 0);
   text-align: center;
   padding: 2em;
 }
@@ -35,15 +35,15 @@ main #columns {
   grid-column: 3 / 3;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* background-color: green; */
-  gap: 15px;
+  gap: 20px;
 }
 .block {
-  background-color: lightblue;
+  background-color: rgb(255, 255, 255);
   width: 100%;
   height: 300px;
   margin-bottom: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  /* border: 1px black solid; */
 }
 
 .block ul {
@@ -69,5 +69,73 @@ main #columns {
   display: block;
   width: 100%;
   margin-bottom: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.tekstvak {
+  padding: 15px;
+  background-color: white;
+}
+
+.project-img-box {
+}
+
+.project-img {
+  width: 120px;
+  margin: 2px;
+  border-style: ridge;
+  cursor: pointer; /* Indicates that the image is clickable */
+}
+
+.lightbox {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  flex-direction: column; /* Stack content vertically */
+}
+
+.lightbox-content {
+  max-width: 70%;
+  max-height: 70%;
+  display: block;
+  border-style: ridge;
+  margin-bottom: 10px; /* Space between image and caption */
+}
+
+.lightbox-caption {
+  width: 40%; /* Match the max-width of the image */
+  max-width: 40%; /* Ensure it doesn't exceed the image's max-width */
+  background-color: white; /* White background */
+  color: black; /* Black text */
+  text-align: center; /* Center the text */
+  padding: 10px; /* Add some padding */
+  box-sizing: border-box; /* Include padding in width calculation */
+  margin-bottom: 20px; /* Space between caption and close button */
+  word-wrap: break-word; /* Handle long words */
+}
+
+.close {
+  position: absolute;
+  top: 50px;
+  right: 100px;
+  color: #ffffff;
+  font-size: 40px;
+  transition: 0.3s;
+  font-family: "Times New Roman", Times, serif; /* Times New Roman font */
+  content: "X"; /* Capital X */
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
 }
