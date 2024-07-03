@@ -96,13 +96,13 @@ main #columns {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
-  display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
   flex-direction: column; /* Stack content vertically */
 }
 
 .lightbox-content {
+  display: none;
   max-width: 70%;
   max-height: 70%;
   display: block;
@@ -123,6 +123,7 @@ main #columns {
 }
 
 .close {
+  display: none;
   position: absolute;
   top: 50px;
   right: 100px;
@@ -135,6 +136,7 @@ main #columns {
 
 .close:hover,
 .close:focus {
+  display: none;
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
