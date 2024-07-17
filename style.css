@@ -11,6 +11,14 @@ body {
   background-color: rgb(243, 243, 243);
 }
 
+.header-img {
+  width: 30%;
+  min-width: 500px;
+  max-width: 600px;
+  display: block;
+  margin: auto;
+}
+
 .header-text {
   font-size: 2em;
   color: rgb(0, 0, 0);
@@ -78,10 +86,11 @@ main #columns {
 }
 
 .project-img-box {
+  max-width: 800px;
 }
 
 .project-img {
-  width: 120px;
+  width: 140px;
   margin: 2px;
   border-style: ridge;
   cursor: pointer; /* Indicates that the image is clickable */
