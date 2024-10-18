@@ -34,16 +34,17 @@
 
         form {
             background-color: red;
-            width: fit-content;
-
-            /* Adjusts to fit the content width */
+            width: 100%;
+            /* Change this to 100% to ensure it takes the full width on smaller screens */
+            max-width: 600px;
+            /* Set a max-width to prevent it from becoming too wide */
             color: white;
             font-size: 1.5em;
-
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-            margin: 0 auto;
+            margin: 0 20px;
+            /* Add horizontal margin to create space on the sides */
             /* Center the form */
         }
 
