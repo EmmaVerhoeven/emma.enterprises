@@ -72,8 +72,200 @@
         a:visited {
             color: red;
         }
-    </style>
 
+
+        .project {
+            margin-left: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+        }
+
+        .project-thumb {
+            display: block;
+            max-width: 200px;
+            padding: 10px;
+        }
+
+        details p {
+            font-size: .8em;
+            font-style: italic;
+        }
+
+        summary {
+
+            line-height: 1.5em;
+        }
+
+        .project-img {
+            width: 140px;
+            margin: 2px;
+            border-style: ridge;
+            cursor: zoom-in;
+            /* Indicates that the image is clickable */
+        }
+
+        .project-img-box {
+            max-width: 800px;
+        }
+
+        .lightbox {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Black background with 50% opacity */
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+            /* Center vertically */
+            flex-direction: column;
+            /* Stack content vertically */
+        }
+
+        .lightbox-content {
+            display: none;
+            max-width: 70%;
+            max-height: 70%;
+            display: block;
+            border-style: ridge;
+            margin-bottom: 10px;
+            /* Space between image and caption */
+            cursor: zoom-out;
+        }
+
+        .lightbox-caption {
+            width: 40%;
+            /* Match the max-width of the image */
+            max-width: 40%;
+            /* Ensure it doesn't exceed the image's max-width */
+            background-color: white;
+            /* White background */
+            color: black;
+            /* Black text */
+            text-align: center;
+            /* Center the text */
+            padding: 10px;
+            /* Add some padding */
+            box-sizing: border-box;
+            /* Include padding in width calculation */
+            margin-bottom: 20px;
+            /* Space between caption and close button */
+            word-wrap: break-word;
+            /* Handle long words */
+        }
+
+        .close {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 100px;
+            color: #ffffff;
+            font-size: 40px;
+            transition: 0.3s;
+            font-family: "Times New Roman", Times, serif;
+            /* Times New Roman font */
+            content: "X";
+            /* Capital X */
+        }
+
+        .close:hover,
+        .close:focus {
+            display: none;
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function openLightbox(img) {
+            var lightbox = document.getElementById("lightbox");
+            var lightboxImg = document.getElementById("lightbox-img");
+            var lightboxCaption = document.getElementById("lightbox-caption");
+
+            lightbox.style.display = "flex";
+            lightboxImg.src = img.src;
+            lightboxCaption.innerHTML = img.getAttribute("data-caption");
+        }
+
+        function closeLightbox() {
+            var lightbox = document.getElementById("lightbox");
+            lightbox.style.display = "none";
+        }
+
+        function highlightTitle(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.classList.add('highlighted');
+            }
+        }
+
+        function removeHighlight(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.classList.remove('highlighted');
+            }
+        }
+
+        function toggleDetails(detailsId) {
+            const detailsElement = document.getElementById(detailsId);
+            if (detailsElement) {
+                // Check if the details element is already open
+                const isOpen = detailsElement.hasAttribute('open');
+
+                // Close all other details elements (optional)
+                const allDetails = document.querySelectorAll('details');
+                allDetails.forEach((details) => {
+                    if (details !== detailsElement) {
+                        details.removeAttribute('open');
+                    }
+                });
+
+                // Toggle the clicked details element
+                if (!isOpen) {
+                    detailsElement.setAttribute('open', 'open');
+                } else {
+                    detailsElement.removeAttribute('open');
+                }
+            }
+        }
+
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // JavaScript to handle the info block content with toggle functionality
+            function toggleInfo(content) {
+                var infoBlock = document.getElementById('infoBlock');
+                // Check if the info block is already displaying the content
+                if (infoBlock.innerHTML === content && infoBlock.style.display === "block") {
+                    // If it is, hide the block
+                    infoBlock.style.display = "none";
+                } else {
+                    // Otherwise, display the new content
+                    infoBlock.innerHTML = content;
+                    infoBlock.style.display = "block";
+                }
+            }
+
+            // Example content for each button
+            var bioContent = "<p>Emma Verhoeven is a Rotterdam-based media artist whose practice explores themes around self-improvement and mental health. Through audiovisual installations and playful workshops, she investigates the evolving definitions of success and meaning within our commerce-driven media landscape.</p>";
+
+
+            // Event listeners for buttons
+            document.getElementById('bioButton').addEventListener('click', function () {
+                toggleInfo(bioContent);
+            });
+
+
+        });
+
+
+    </script>
 
 </head>
 
@@ -133,7 +325,7 @@
             <h2>FAQ</h2>
 
             <details>
-                <summary><i>What does Emma Verhoeven do, exactly?</i></summary>
+                <summary>What does Emma Verhoeven do, exactly?</summary>
 
                 <p>
                     Listen, there's just a lot of things, ok. Emma never chose one path, one medium or one topic, but
@@ -152,7 +344,7 @@
             </details>
 
             <details>
-                <summary><i>Ok, but if she had to choose one description, what would we call Emma?</i></summary>
+                <summary>Ok, but if she had to choose one description, what would we call Emma?</summary>
 
                 <p>
                     Emma often uses the word 'media artist' (or 'mediakunstenaar' in Dutch) to describe herself. It
@@ -168,7 +360,7 @@
 
 
             <details>
-                <summary><i>How does Emma make a living?</i></summary>
+                <summary>How does Emma make a living?</summary>
 
                 <p>
                     Understandable question! Besides the fact that she is extremely lucky with a very affordable rent
@@ -183,19 +375,216 @@
 
             </details>
 
-            <details>
-                <summary><i>What are some examples of Emma's work?</i></summary>
+            <details open>
+                <summary>What are some examples of Emma's projects?</summary>
 
-                <p>Well, there's .... [adding this later]</p>
+
+                <details class="project" id="details-themework">
+                    <summary id="title-themework">🌵 ThemeWork (event series)</summary>
+                    <p>ThemeWork is an ongoing series of events hosted at <a href="http://extrapractice.space"
+                            target="_blank">Extra Practice</a>,
+                        where we collectively work on important and serious unpaid tasks (like filing taxes), but
+                        with a unique theme. The
+                        theme changes every session, and is reflected in the space’s decor, the snacks, the online
+                        communication, and sometimes in the dress code.
+                        Instead of isolating ourselves with our laptops, we enhance the value of our unpaid work by
+                        making it a fun and collective experience.
+                        At the same time, we are conducting important research: do we work better if we imagine
+                        ourselves in a wellness resort? Or a daycare center? Dressed like cowboys?
+                        <br><br>
+                        If you want to attend the next ThemeWork session, keep an eye on the @extrapractice
+                        instagram page.
+                    </p>
+                    <div class="project-img-box">
+                        <img class="project-img" src="images/tw/TW1.png" alt="image" onclick="openLightbox(this)"
+                            data-caption="...">
+                        <img class="project-img" src="images/tw/TW2.png" alt="image" onclick="openLightbox(this)"
+                            data-caption="...">
+                        <img class="project-img" src="images/tw/TW3.png" alt="image" onclick="openLightbox(this)"
+                            data-caption="...">
+                        <img class="project-img" src="images/tw/TW4.png" alt="image" onclick="openLightbox(this)"
+                            data-caption="...">
+                    </div>
+                </details>
+
+
+                <details class="project" id="details-ums">
+                    <summary id="title-ums"> 🗺️ United Mental States (workshop, film, installation)
+                    </summary>
+
+                    <p><a href="https://united-mental-states.glitch.me/" target="blank">United Mental States</a> is a
+                        collection of mental-health-inspired islands envisioned by
+                        youth
+                        from
+                        Brabant, that were created during multiple workshops Emma developed with <a
+                            href="https://www.mu.nl/nl" target="blank">Mu Hybrid Art House</a> over the
+                        last year, then translated into a spatial work for their 25-year-anniversary-exhibition
+                        Hybrid
+                        Tales
+                        For Hybrid Times. The various continents in this ‘3D collage’ represent common States of
+                        young
+                        minds
+                        as associative visual landscapes; a 30 min video projection shows personal interviews
+                        about
+                        the
+                        current state of their mental health, with their self-imagined ‘mental landscapes’ as
+                        backdrops.
+                        <br><br>
+                        Emma absolutely loved working with young people, working on serious topics, working in
+                        Brabant,
+                        working
+                        with
+                        neurodiverse kids, working with MU, working with her hands, working with friends. She would
+                        like to
+                        do
+                        more of it and get better at it.
+                    </p>
+
+                    <div class="project-img-box">
+                        <img class="project-img" src="images/ums/ums2.png" alt="image" onclick="openLightbox(this)"
+                            data-caption="In the beginning of the workshop I collect various feelings and emotions from participant using post-its and different questions/prompts. We then combine all the answers from the group to find overlap, which there always is.">
+                        <img class="project-img" src="images/ums/ums9.png" alt="image" onclick="openLightbox(this)"
+                            data-caption="Early on in the workshop I do a sort of guided meditation in which every participant actively imagines what the discussed emotions look like as landscape">
+                        <img class="project-img" src="images/ums/ums6.png" alt="image" onclick="openLightbox(this)"
+                            data-caption="It is always a challenge getting teens to tell me their feelings with their eyes closed, but I'm getting better and better at it">
+                        <img class="project-img" src="images/ums/ums3.png" alt="image" onclick="openLightbox(this)"
+                            data-caption="In each workshop there is always a presentation moments in which participants share with the group/other groups the island they made, the connections between states, and where in these states they find themselves often. We use the islands as a conversation tool, literally naviagating feelings and thoughts together.">
+                        <img class="project-img" src="images/ums/ums7.png" alt="image" onclick="openLightbox(this)"
+                            data-caption="With selected groups of students I did interviews in front of a green screen, placing them inside their created mental landscapes, then interviewing them about these places. This resulted in the video work shown with the UMS installation in MU.">
+
+                        <img class="project-img" src="images/ums/ums10.png" alt="image" onclick="openLightbox(this)"
+                            data-caption="Installation in MU Hybrid Art House during Hybrid Tales for Hybrid Times: 5 styrofoam islands with printed acrylate elements derived from the United Mental States workshops with teenagers from Brabant">
+                        <img class="project-img" src="images/ums/ums13.png" alt="image" onclick="openLightbox(this)"
+                            data-caption="Installation in MU Hybrid Art House during Hybrid Tales for Hybrid Times: 5 styrofoam islands with printed acrylate elements derived from the United Mental States workshops with teenagers from Brabant">
+                        <img class="project-img" src="images/ums/ums11.png" alt="image" onclick="openLightbox(this)"
+                            data-caption="Installation in MU Hybrid Art House during Hybrid Tales for Hybrid Times: 5 styrofoam islands with printed acrylate elements derived from the United Mental States workshops with teenagers from Brabant">
+                        <img class="project-img" src="images/ums/ums14.png" alt="image" onclick="openLightbox(this)"
+                            data-caption="Installation in MU Hybrid Art House during Hybrid Tales for Hybrid Times: 5 styrofoam islands with printed acrylate elements derived from the United Mental States workshops with teenagers from Brabant">
+                        <img class="project-img" src="images/ums/ums12.png" alt="image" onclick="openLightbox(this)"
+                            data-caption="Installation in MU Hybrid Art House during Hybrid Tales for Hybrid Times: 5 styrofoam islands with printed acrylate elements derived from the United Mental States workshops with teenagers from Brabant">
+                    </div>
+
+                </details>
+
+
+
+                <!-- Workshop 3: Translocal Lives -->
+                <details class="project" id="details-translocal">
+                    <summary id="title-translocal">📽️ Translocal Lives (workshop, film)</summary>
+                    <p>The 6-week course I co-developed as part of Translocal Lives, a research project by Amanda
+                        Paz Alencar and Camila Sarria Sanz.
+                        I got to teach 14 newcomers in Rotterdam to translate their ideas on place-making and
+                        belonging into short films, using their smartphones and open-source software.
+                        We screened the final films in KINO Rotterdam.
+                    </p>
+                    <div class="project-img-box">
+                        <img class="project-img" src="images/tl/why.png" alt="image" onclick="openLightbox(this)"
+                            data-caption="...">
+                        <img class="project-img" src="images/tl/filming.JPG" alt="image" onclick="openLightbox(this)"
+                            data-caption="...">
+                        <img class="project-img" src="images/tl/site.png" alt="image" onclick="openLightbox(this)"
+                            data-caption="...">
+                        <img class="project-img" src="images/tl/postertjes2.png" alt="image"
+                            onclick="openLightbox(this)" data-caption="...">
+
+
+                        <img class="project-img" src="images/tl/still4.png" alt="image" onclick="openLightbox(this)"
+                            data-caption="...">
+                        <img class="project-img" src="images/tl/still3.png" alt="image" onclick="openLightbox(this)"
+                            data-caption="...">
+                        <img class="project-img" src="images/tl/still5.png" alt="image" onclick="openLightbox(this)"
+                            data-caption="...">
+                        <img class="project-img" src="images/tl/still2.png" alt="image" onclick="openLightbox(this)"
+                            data-caption="...">
+                    </div>
+                </details>
+
+                <details class="project" id="details-ehn">
+                    <summary id="title-ehn">🔑 Escape Here Now (installation, game) </summary>
+
+                    <p>If you’ve ever experienced an escape room, you will know the thrill of looking around for
+                        clues,
+                        finding patterns in everything, and feeling like the hero in a real adventure story. For
+                        under
+                        €30
+                        you can have a fun hour trying to crack codes and find the key to your fake escape.
+                        But escape rooms are just superficial entertaining experiences you can buy, and I want to
+                        spend
+                        my
+                        time productively and meaningfully. I want to play the lead role in my own adventure. I want
+                        real
+                        experiences!</p>
+                    <p>
+                        I want to travel the world to discover myself, go on a retreat to find myself. Lift up my
+                        soul
+                        on
+                        the yoga mat, but also keep both feet on the ground; need to stay down to earth.
+                        Straightforward.
+                        Got to move forward. Set goals, reach my full potential. Push myself, be more productive.
+                        Dream
+                        big,
+                        trust the universe. Let go of fears and stress. Do what I want! Enjoy life, live it to the
+                        fullest.
+                        Have fun, be free, escape!
+                    </p>
+                    <i>
+                        This escape room will make you more productive, centered, grounded, motivated, charismatic,
+                        kind,
+                        beautiful, creative, healthy, ambitious, fit, profitable, driven, relaxed, calm, happy,
+                        passionate,
+                        reflective, aware, brave, humble, confident, intelligent, skilled, accepting, balanced… play
+                        a
+                        thrilling game of self-discovery and escape from the maze of self-improvement!
+                    </i></p>
+                    <div class="project-img-box">
+                        <img class="project-img" src="images/ehn/ehn2.jpg" alt="image" onclick="openLightbox(this)"
+                            data-caption="...">
+                        <img class="project-img" src="images/ehn/ehn3.jpg" alt="image" onclick="openLightbox(this)"
+                            data-caption="...">
+                        <img class="project-img" src="images/ehn/ehn5.jpg" alt="image" onclick="openLightbox(this)"
+                            data-caption="...">
+                        <img class="project-img" src="images/ehn/ehn6.jpg" alt="image" onclick="openLightbox(this)"
+                            data-caption="...">
+                        <img class="project-img" src="images/ehn/ehn1.jpg" alt="image" onclick="openLightbox(this)"
+                            data-caption="...">
+                    </div>
+
+                </details>
             </details>
 
+            <!-- Workshop 4: Once Upon a Time in Desktoppywood -->
+            <details class="project" id="details-desktoppywood">
+                <summary id="title-desktoppywood">💻 Once Upon a Time in Desktoppywood (workshop)</summary>
+                <p>An Introduction into Non-Professional Modes of Digital Storytelling. Workshop created for the
+                    MA Critical Inquiry Lab at the Design Academy Eindhoven in collaboration with
+                    <a href="http://www.bnjmnearl.eu" target="_blank">Benjamin Earl</a>. The workshop program
+                    and resources can be found <a href="https://desktoppywood.bnjmnearl.eu" target="_blank">here</a>.
+                </p>
+                <div class="project-img-box">
+                    <img class="project-img" src="" alt="image" onclick="openLightbox(this)" data-caption="...">
+                    <img class="project-img" src="" alt="image" onclick="openLightbox(this)" data-caption="...">
+                    <img class="project-img" src="" alt="image" onclick="openLightbox(this)" data-caption="...">
+                    <img class="project-img" src="" alt="image" onclick="openLightbox(this)" data-caption="...">
+                    <img class="project-img" src="" alt="image" onclick="openLightbox(this)" data-caption="...">
+                    <img class="project-img" src="" alt="image" onclick="openLightbox(this)" data-caption="...">
+                </div>
+            </details>
+
+
+
+
+
+
+
             <details>
-                <summary><i>What is Emma working on right now?</i></summary>
+                <summary>What is Emma working on right now?</summary>
 
                 <p>
-                    These days, Emma is designing & illustrating money bills for a time bank, teaching her UMS workshop
+                    These days, Emma is designing & illustrating money bills for a time bank, teaching her UMS
+                    workshop
                     at a
-                    highschool in Geldrop, and continuing a thread she started last spring about regenerative living.
+                    highschool in Geldrop, and continuing a thread she started last spring about regenerative
+                    living.
                     It's
                     also getting wintery, so she is taking it easy and going to the cinema a lot.
                 </p>
@@ -203,13 +592,15 @@
 
 
             <details>
-                <summary><i>What does Emma want to achieve in the future?</i></summary>
+                <summary>What does Emma want to achieve in the future?</summary>
 
                 <p>
-                    Excellent question. The answer has often changed... Currently, Emma is working & dreaming with her
+                    Excellent question. The answer has often changed... Currently, Emma is working & dreaming with
+                    her
                     two
                     sisters on a plan to
-                    start a regenerative farm together, where she will take care of the community building and arts &
+                    start a regenerative farm together, where she will take care of the community building and arts
+                    &
                     culture
                     part of the organisation... What a beautiful dream. It might come true sooner than they think!
                 </p>
@@ -217,7 +608,8 @@
 
 
             <h2>Contact</h2>
-            <p>email Emma at <span style="color:rgb(38, 132, 255)"><u>emmavrhvn [at] gmail.com</u></span> or find her on
+            <p>email Emma at <span style="color:rgb(38, 132, 255)"><u>emmavrhvn [at] gmail.com</u></span> or find
+                her on
                 <a href="www.instagram.com/emmavrhvn" target="_blank">instagram</a>
             </p>
             </details>
@@ -238,6 +630,12 @@
 
         </div>
 
+        <!-- Lightbox Container -->
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close">x</span>
+            <img class="lightbox-content" id="lightbox-img">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
 
 
 
