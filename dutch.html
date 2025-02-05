@@ -16,6 +16,14 @@
 
         }
 
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin: 0;
+            background-color: rgb(244, 249, 194);
+
+        }
+
+
         .rood {
             height: 1vh;
             background-color: rgb(255, 31, 15);
@@ -32,19 +40,15 @@
         }
 
 
-        body {
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            margin: 0;
-            background-color: rgb(244, 249, 194);
 
-        }
 
 
         h1,
         h2 {
             font-family: 'Times New Roman', Times, serif;
             font-size: 1.8em;
-            color: #000000
+            color: #000000;
+
         }
 
         a {
@@ -142,6 +146,26 @@
             margin-bottom: 10px;
         }
 
+        .day {
+            color: rgb(255, 31, 15)
+        }
+
+        .time {
+            color: #289c3b
+        }
+
+        .thema {
+            font-weight: normal;
+        }
+
+        .voorbij {
+            font-weight: normal;
+            text-decoration: line-through;
+            color: rgb(134, 136, 106);
+            background-color: rgb(228, 232, 181);
+
+        }
+
 
         @media (max-width: 768px) {
 
@@ -235,6 +259,7 @@
 
 
 
+
             <table class="lesdata">
                 <thead>
                     <tr>
@@ -244,28 +269,41 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td style="color: rgb(255, 31, 15)">Thursday 30 Jan</td>
-                        <td style="color:#289c3b">19:00 – 21:00</td>
-                        <td style="font-weight:normal">supermarkt & restaurant 🥦</td>
+                    <tr class="voorbij">
+                        <td>Thursday 30 Jan</td>
+                        <td>19:00 – 21:00</td>
+                        <td class="thema">supermarkt & restaurant 🥦</td>
                     </tr>
                     <tr>
-                        <td style="color: rgb(255, 31, 15)">Wednesday 5 Feb</td>
-                        <td style=" color:#289c3b">18:00 – 20:00</td>
-                        <td style="font-weight:normal"><span class="custom-tooltip">oorzaak <span
-                                    class="tooltip-text">cause</span> </span> & <span class="custom-tooltip">gevolg
+                        <td class="day">Wednesday 5 Feb</td>
+                        <td class="time">18:00 – 20:00</td>
+                        <td class="thema"><span class="custom-tooltip">oorzaak <span class="tooltip-text">cause</span>
+                            </span> & <span class="custom-tooltip">gevolg
                                 <span class="tooltip-text">consequence</span> </span> 🕵🏻‍♂️</td>
                     </tr>
                     <tr>
-                        <td style="color: rgb(255, 31, 15)">Thursday 13 Feb</td>
-                        <td style="color:#289c3b">19:00 – 21:00</td>
-                        <td style="font-weight:normal"><span class="custom-tooltip">liefde <span
-                                    class="tooltip-text">love</span> </span> & complimentjes 💌</td>
+                        <td class="day">Thursday 13 Feb</td>
+                        <td class="time">19:00 – 21:00</td>
+                        <td class="thema"><span class="custom-tooltip">liefde <span class="tooltip-text">love</span>
+                            </span> & complimentjes 💌</td>
                     </tr>
                     <tr>
-                        <td style="color: rgb(255, 31, 15)">Thursday 20 Feb</td>
-                        <td style="color:#289c3b">19:00 – 21:00</td>
-                        <td style="font-weight:normal">tbd</td>
+                        <td class="day">Thursday 20 Feb</td>
+                        <td class="time">19:00 – 21:00</td>
+                        <td class="thema"><span class="custom-tooltip">vragen <span
+                                    class="tooltip-text">questions</span>
+                            </span> <span class="custom-tooltip">stellen <span class="tooltip-text">to ask</span>
+                            </span>❓</td>
+                    </tr>
+                    <tr>
+                        <td class="day">Thursday 27 Feb</td>
+                        <td class="time">19:00 – 21:00</td>
+                        <td class="thema"><span class="custom-tooltip">meningen <span
+                                    class="tooltip-text">opinions</span>
+                            </span> / <span class="custom-tooltip">praten <span class="tooltip-text">talking</span>
+                            </span> <span class="custom-tooltip">over <span class="tooltip-text">about</span>
+                            </span> <span class="custom-tooltip">kunst <span class="tooltip-text">art</span> </span> 🖼️
+                        </td>
                     </tr>
 
                 </tbody>
@@ -290,7 +328,8 @@
 
 
         <section>
-            <h1>💿 <span class="custom-tooltip">Liedje <span class="tooltip-text">Song</span> </span> van de week</h1>
+            <h1>💿 <span class="custom-tooltip">Liedje <span class="tooltip-text">Song</span> </span> van de <span
+                    class="custom-tooltip">maand <span class="tooltip-text">month</span> </span></h1>
 
             <span>🎵 <b><i>Ronnie Knipt Zijn Haar</i> – Spinvis</b></span>
 
@@ -304,41 +343,105 @@
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <details class="songtekst">
+            <details open class="songtekst">
                 <summary>Songtekst</summary>
-                <p><i>
-                        Het hoeft niet in de krant <br>
-                        Maar Ronnie knipt z'n haar<br>
-                        Het mocht een keer<br>
-                        Dat vond zij ook<br>
-                        Het zat ook raar<br><br>
-                        Ze had vandaag geen tijd<br>
-                        Maar hij weet niet meer waarom<br>
-                        De thee is op<br>
-                        Zijn haar is kort<br>
-                        De maand is om<br><br>
-                        Ronnie, Ronnie, ooit<br>
-                        Maandag moest ze werken<br>
-                        En ze belt waarschijnlijk nooit<br>
-                        De brief zat in zijn binnenzak<br>
-                        Maar nu opeens vandaag is hij hem kwijt<br>
-                        Voor even of voor altijd<br><br>
-                        Ze houdt van chocola<br>
-                        Ronnie schrijft het op<br>
-                        Portugal Johnny Depp Franse pop<br><br>
-                        Een merel in de tuin<br>
-                        De haren in zijn hand<br>
-                        Hij zou zo graag misschien een keer<br>
-                        Dat op een dag als het kon<br><br>
-                        Maar Ronnie, Ronnie, hoe<br>
-                        De maan is niet van zilver<br>
-                        En je kunt er niet naar toe<br>
-                        De brief lag al die tijd gewoon op tafel<br>
-                        Hij fluit een liedje van de Bee Gees<br>
-                        Uit hun eerste periode<br>
-                        De merel schrikt en verdwijnt<br>
-                        Voor even of voor altijd
-                    </i></p>
+
+
+                <br>
+                Het hoeft niet in de krant <br>
+                Maar Ronnie knipt z'n haar<br>
+                Het mocht een keer<br>
+                Dat vond zij ook<br>
+                Het zat ook raar
+                <span class="custom-tooltip">🇬🇧<span class="tooltip-text">It does not have to be in the newspaper
+                        <br>
+                        But Ronnie cuts his hair<br>
+                        It was due <br>
+                        She thought so too<br>
+                        It looked weird, too<br></span> </span> <br>
+
+
+
+                <br>
+                Ze had vandaag geen tijd<br>
+                Maar hij weet niet meer waarom<br>
+                De thee is op<br>
+                Zijn haar is kort<br>
+                De maand is om
+                <span class="custom-tooltip">🇬🇧<span class="tooltip-text">
+                        She had no time today<br>
+                        But he doesn't remember why<br>
+                        The tea is finished<br>
+                        His hair is short<br>
+                        The month is over<br>
+                    </span> </span> <br>
+
+                <br>
+
+
+                Ronnie, Ronnie, ooit<br>
+                Maandag moest ze werken<br>
+                En ze belt waarschijnlijk nooit<br>
+                De brief zat in zijn binnenzak<br>
+                Maar nu opeens vandaag is hij hem kwijt<br>
+                Voor even of voor altijd
+
+                <span class="custom-tooltip">🇬🇧<span class="tooltip-text">
+                        Ronnie, Ronnie, one day<br>
+                        Monday she had to work<br>
+                        And she'll probably never call<br>
+                        The letter was in his inside pocket<br>
+                        But now, suddenly, today, he has lost it<br>
+                        For a moment or forever
+                    </span> </span> <br>
+
+                <br>
+
+                Ze houdt van chocola<br>
+                Ronnie schrijft het op<br>
+                Portugal, Johnny Depp, Franse pop
+
+                <span class="custom-tooltip">🇬🇧<span class="tooltip-text">
+                        She likes chocolate<br>
+                        Ronnie writes it down<br>
+                        Portugal, Johnny Depp, French pop music
+                    </span> </span> <br>
+
+                <br>
+
+                Een merel in de tuin<br>
+                De haren in zijn hand<br>
+                Hij zou zo graag, misschien een keer<br>
+                Dat op een dag, als het kon <span class="custom-tooltip">🇬🇧<span class="tooltip-text">
+                        A blackbird in the garden<br>
+                        The hairs in his hand<br>
+                        He would really love to, maybe once<br>
+                        That one day, if it were possible
+                    </span> </span> <br>
+
+                <br>
+
+
+                Maar Ronnie, Ronnie, hoe<br>
+                De maan is niet van zilver<br>
+                En je kunt er niet naar toe<br>
+                De brief lag al die tijd gewoon op tafel<br>
+                Hij fluit een liedje van de Bee Gees<br>
+                Uit hun eerste periode<br>
+                De merel schrikt en verdwijnt<br>
+                Voor even of voor altijd
+                <span class="custom-tooltip">🇬🇧<span class="tooltip-text">
+
+                        But Ronnie, Ronnie, how<br>
+                        The moon is not (made) of silver<br>
+                        And you can't go there<br>
+                        The letter was just lying on the table all this time<br>
+                        He whistles a song by the Bee Gees<br>
+                        From their early days<br>
+                        The blackbird startles, and disappears<br>
+                        For a moment or forever
+                    </span> </span> <br>
+
             </details>
 
             <br>
