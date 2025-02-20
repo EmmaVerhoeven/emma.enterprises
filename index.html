@@ -194,6 +194,31 @@
         .logo {
             max-width: 400px;
         }
+
+        @media (max-width: 768px) {
+            main {
+                grid-template-columns: 1fr;
+                /* Stack everything in a single column */
+            }
+
+            .gutter {
+                max-width: 100%;
+                /* Allow full width for visibility */
+                text-align: center;
+                /* Center the banners */
+            }
+
+            .gutter-ad {
+                display: block !important;
+                /* Ensure it's visible */
+                width: 100%;
+                /* Make it responsive */
+                max-width: 300px;
+                /* Adjust size if necessary */
+                margin: 10px auto;
+                /* Center it */
+            }
+        }
     </style>
     <script>
         function openLightbox(img) {
