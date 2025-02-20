@@ -197,26 +197,33 @@
 
         @media (max-width: 768px) {
             main {
-                grid-template-columns: 1fr;
-                /* Stack everything in a single column */
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                /* Centers everything */
             }
 
             .gutter {
                 max-width: 100%;
-                /* Allow full width for visibility */
+                width: 100%;
                 text-align: center;
-                /* Center the banners */
+            }
+
+            #gutter-left,
+            #gutter-right {
+                display: block;
+                width: 100%;
+                /* Ensure full width */
+                margin: 0 auto;
+                /* Center the ads */
             }
 
             .gutter-ad {
                 display: block !important;
-                /* Ensure it's visible */
-                width: 100%;
-                /* Make it responsive */
+                width: 80%;
+                /* Prevents stretching too much */
                 max-width: 300px;
-                /* Adjust size if necessary */
                 margin: 10px auto;
-                /* Center it */
             }
         }
     </style>
