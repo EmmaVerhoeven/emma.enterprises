@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wat we tot nu toe geleerd hebben</title>
+    <style>
+        header {
+            height: 6vh;
+            width: 100%;
+            background-image: url(images/dutch/nl.jpg);
+            background-size: contain;
+            margin-bottom: -30px;
+
+        }
+
+        .rood {
+            height: 1vh;
+            background-color: rgb(255, 31, 15);
+        }
+
+        .wit {
+            height: 1vh;
+            background-color: white;
+        }
+
+        .blauw {
+            height: 1vh;
+            background-color: rgb(3, 67, 187);
+        }
+
+
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin: 0;
+            background-color: rgb(244, 249, 194);
+            display: flex;
+            /* Flexbox to center content */
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+            /* Center vertically */
+            min-height: 100vh;
+            /* Full height viewport */
+            flex-direction: column;
+            /* Stack elements vertically */
+        }
+
+        main {
+            max-width: 800px;
+
+            margin: 20px auto;
+            /* Center horizontally */
+        }
+
+
+
+
+
+        h1,
+        h2 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.8em;
+            color: #000000;
+
+
+        }
+
+        a {
+            color: forestgreen;
+        }
+
+
+        h3 {
+            margin-bottom: -5px;
+        }
+
+
+
+
+
+        table {
+            border-collapse: collapse;
+            margin: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #000;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            COLOR: BLACK;
+        }
+
+
+        .voorbeeldzin {
+            font-size: 2em;
+            margin-bottom: -5px;
+        }
+
+        .voorbeeldtrans {
+            font-size: 1.5em;
+        }
+
+        .hl1 {
+            background-color: yellow;
+        }
+
+        .hl2 {
+            background-color: rgb(30, 255, 0);
+        }
+
+        .hldus {
+            background-color: rgb(255, 131, 201);
+        }
+
+
+        .pilottext {
+            width: 60%;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 10pt;
+            background-color: white;
+            padding: 10px;
+            border: 1px grey solid;
+        }
+
+        .custom-tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted #666;
+            cursor: help;
+        }
+
+        .custom-tooltip .tooltip-text {
+            visibility: hidden;
+            background-color: rgb(255, 30, 30);
+            color: white;
+            text-align: center;
+            padding: 2px 4px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .custom-tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        section {
+            margin: 1rem 0;
+            padding: 1rem;
+            border-top: lightgreen solid 1px;
+
+        }
+
+
+
+
+
+        @media (max-width: 768px) {
+
+            body {
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+            }
+
+            main {
+                padding: 0 15px 0 15px;
+
+            }
+
+
+        }
+    </style>
+
+
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+    <h1>Wat we tot nu toe geleerd hebben</h1>
+    <p class="subtitle">Om zelf te reviewen</p>
+
+    <h2>1. Introductie 🤝</h2>
+    <table>
+        <tr>
+            <th>Nederlands</th>
+            <th>English</th>
+        </tr>
+        <tr>
+            <td>Ik ben/heet Emma</td>
+            <td>I am/my name is Emma</td>
+        </tr>
+        <tr>
+            <td>Ik ben tweeëndertig jaar (oud)</td>
+            <td>I am thirty-two years old</td>
+        </tr>
+        <tr>
+            <td>Ik kom uit Brabant</td>
+            <td>I come from Brabant</td>
+        </tr>
+        <tr>
+            <td>Ik woon al negen jaar in Rotterdam</td>
+            <td>I've been living in Rotterdam for nine years</td>
+        </tr>
+        <tr>
+            <td>Ik spreek Nederlands en Engels</td>
+            <td>I speak Dutch and English</td>
+        </tr>
+        <tr>
+            <td>Ik spreek vijf talen</td>
+            <td>I speak five languages</td>
+        </tr>
+        <tr>
+            <td>Ik kom uit het Zuiden van Duitsland</td>
+            <td>I come from the South of Germany</td>
+        </tr>
+        <tr>
+            <td>Ik werk als grafisch ontwerper</td>
+            <td>I work as a graphic designer</td>
+        </tr>
+        <tr>
+            <td>Ik ben kunstenaar</td>
+            <td>I am an artist</td>
+        </tr>
+
+
+        <tr>
+            <td>Ik heb geen broers of zussen</td>
+            <td>I don't have any siblings</td>
+        </tr>
+        <tr>
+            <td>Ik heb twee zusjes</td>
+            <td>I have two little sisters</td>
+        </tr>
+        <tr>
+            <td>Ik heb een zus en een broer</td>
+            <td>I have a sister and a brother</td>
+        </tr>
+        <tr>
+            <td>Ik heb een neefje</td>
+            <td>I have a nephew</td>
+        </tr>
+        <tr>
+            <td>Hij is één</td>
+            <td>He is one</td>
+        </tr>
+        <tr>
+            <td>Ik heb een kat, zij heet Jennifer</td>
+            <td>I have a cat, she's called Jennifer</td>
+        </tr>
+        <tr>
+            <td>Ik heb geen huisdieren</td>
+            <td>I don't have any pets</td>
+        </tr>
+        <tr>
+            <td>Ik heb een hond, hij heet Lutz</td>
+            <td>I have a dog, he's called Lutz</td>
+        </tr>
+    </table>
+
+
+    <h2>2. Supermarkt & restaurant 🥦 </h2>
+
+    <table>
+        <tr>
+            <th>Nederlands</th>
+            <th>English</th>
+        </tr>
+        <tr>
+            <td>Wat kan ik voor je doen?</td>
+            <td>What can I do for you?</td>
+        </tr>
+        <tr>
+            <td>Een colaatje - met ijs?</td>
+            <td>A coke - with ice?</td>
+        </tr>
+        <tr>
+            <td>Wil je daar ijs in?</td>
+            <td>Do you want ice in that?</td>
+        </tr>
+        <tr>
+            <td>Ja, lekker.</td>
+            <td>Yes, nice.</td>
+        </tr>
+        <tr>
+            <td>Komt eraan!</td>
+            <td>Coming right up!</td>
+        </tr>
+        <tr>
+            <td>Wat wil je drinken?</td>
+            <td>What would you like to drink?</td>
+        </tr>
+        <tr>
+            <td>Voor mij een americano alsjeblieft.</td>
+            <td>For me, an Americano, please.</td>
+        </tr>
+        <tr>
+            <td>Met melk of suiker?</td>
+            <td>With milk or sugar?</td>
+        </tr>
+        <tr>
+            <td>Nee, dankje.</td>
+            <td>No, thanks.</td>
+        </tr>
+        <tr>
+            <td>Heb je een witbiertje?</td>
+            <td>Do you have a wheat beer?</td>
+        </tr>
+        <tr>
+            <td>Wat heb je op de tap?</td>
+            <td>What do you have on tap?</td>
+        </tr>
+        <tr>
+            <td>De IPA is helaas op.</td>
+            <td>The IPA is unfortunately out.</td>
+        </tr>
+        <tr>
+            <td>Heb je een menu?</td>
+            <td>Do you have a menu?</td>
+        </tr>
+        <tr>
+            <td>Mag ik het menu zien?</td>
+            <td>May I see the menu?</td>
+        </tr>
+        <tr>
+            <td>Mag ik een Mojito, maar met rum in plaats van wodka?</td>
+            <td>May I have a Mojito, but with rum instead of vodka?</td>
+        </tr>
+        <tr>
+            <td>Ik ben nog niet klaar.</td>
+            <td>I'm not ready yet.</td>
+        </tr>
+        <tr>
+            <td>Kunnen we straks apart betalen?</td>
+            <td>Can we pay separately later?</td>
+        </tr>
+        <tr>
+            <td>Doe maar een fles.</td>
+            <td>Just give me a bottle.</td>
+        </tr>
+        <tr>
+            <td>Jullie kunnen hier plaatsnemen.</td>
+            <td>You can take a seat here.</td>
+        </tr>
+        <tr>
+            <td>Kan ik iets voor jullie inschenken?</td>
+            <td>Can I pour something for you?</td>
+        </tr>
+        <tr>
+            <td>Wil je de huiswijn, of een natuurwijn?</td>
+            <td>Would you like the house wine or a natural wine?</td>
+        </tr>
+        <tr>
+            <td>Willen jullie wat eten bestellen?</td>
+            <td>Would you like to order some food?</td>
+        </tr>
+        <tr>
+            <td>Voor mij de pompoen, alsjeblieft.</td>
+            <td>For me, the pumpkin, please.</td>
+        </tr>
+        <tr>
+            <td>Heb je vega gerechten?</td>
+            <td>Do you have vegetarian dishes?</td>
+        </tr>
+        <tr>
+            <td>Ik ben allergisch voor tomaat.</td>
+            <td>I'm allergic to tomatoes.</td>
+        </tr>
+        <tr>
+            <td>Wat zit er in?</td>
+            <td>What’s in it?</td>
+        </tr>
+        <tr>
+            <td>Kan de saus apart?</td>
+            <td>Can the sauce be separate?</td>
+        </tr>
+        <tr>
+            <td>Wat is jouw favoriet?</td>
+            <td>What’s your favorite?</td>
+        </tr>
+        <tr>
+            <td>Willen jullie nog een toetje?</td>
+            <td>Would you like a dessert?</td>
+        </tr>
+        <tr>
+            <td>Met hoeveel zijn jullie?</td>
+            <td>How many are you?</td>
+        </tr>
+        <tr>
+            <td>Heb je een tafel voor ons?</td>
+            <td>Do you have a table for us?</td>
+        </tr>
+        <tr>
+            <td>Zijn jullie klaar om te bestellen?</td>
+            <td>Are you ready to order?</td>
+        </tr>
+        <tr>
+            <td>Heb je non-alcoholische drankjes?</td>
+            <td>Do you have non-alcoholic drinks?</td>
+        </tr>
+        <tr>
+            <td>Wat voor sapjes heb je?</td>
+            <td>What kind of juices do you have?</td>
+        </tr>
+        <tr>
+            <td>Ik twijfel tussen bier of wijn.</td>
+            <td>I'm doubting between beer or wine.</td>
+        </tr>
+        <tr>
+            <td>Wat raad jij aan?</td>
+            <td>What do you recommend?</td>
+        </tr>
+        <tr>
+            <td>Waar is de wc?</td>
+            <td>Where is the bathroom?</td>
+        </tr>
+        <tr>
+            <td>Geniet ervan!</td>
+            <td>Enjoy!</td>
+        </tr>
+    </table>
+
+
+
+    <h2>3. Oorzaak & gevolg 🕵🏻‍♂️</h2>
+    <h3>Dus (so, therefore)</h3>
+    <p class="subtitle">Conclusion/result</p>
+
+
+    <p class="voorbeeldzin"><span class="hl1">Ik ben moe</span>, <span class="hldus">dus</span> <span class="hl2">ik ga
+            slapen</span></p>
+
+    <p class="voorbeeldtrans">I am tired, so I am going to sleep</p>
+
+
+    <h3>Want (because)</h3>
+    <p class="subtitle">Explanation after the fact</p>
+
+    <p class="voorbeeldzin"><span class="hl2">Ik ga slapen</span>, <span class="hldus">want</span> <span class="hl1">ik
+            ben moe</span></p>
+
+    <p class="voorbeeldtrans">I am going to sleep, because I am tired</p>
+
+
+
+
+    <h3>Omdat (because)</h3>
+    <p class="subtitle">Reason given first; verb switches to the end!</p>
+
+    <p class="voorbeeldzin"><span class="hl2">Ik ga slapen</span>, <span class="hldus">omdat</span> <span class="hl1">ik
+            moe <b>ben</b></span></p>
+
+    <p class="voorbeeldtrans">I am going to sleep, because I am tired</p>
+
+    <h3>Daarom (that's why)</h3>
+    <p class="subtitle">Referring back to previous statement</p>
+    <p class="voorbeeldzin"><span class="hl1">Ik ben moe</span>, <span class="hldus">daarom</span> <span
+            class="hl2"><b>ga</b>
+            ik slapen</span></p>
+
+    <p class="voorbeeldtrans">I am tired, that's why I am going to sleep</p>
+
+
+
+    <h2>4. Liefdesbrieven aan objecten 💌</h2>
+    <p class="subtitle">Toen we odes gingen schrijven aan random dingen op tafel</p>
+
+    <p class="pilottext">
+
+        <span class="custom-tooltip">Lieve lamp, ik hou van de manier waarop je op en neer beweegt. <span
+                class="tooltip-text">Dear lamp, I love the way you move up and down.</span></span>
+        <span class="custom-tooltip">Jij bent zo uniek,
+            je hoort thuis in een
+            designtijdschrift.<span class="tooltip-text">You
+                are so unique, you belong in a design magazine.</span></span>
+    </p>
+
+    <p class="pilottext">
+
+        <span class="custom-tooltip">Beste digestive koekje, in het Engels is je naam 'biscuit', <span
+                class="tooltip-text">Dear digestive biscuit, in English your name is
+                'biscuit', </span></span> <span class="custom-tooltip"> en je levenspartner is een kopje thee. <span
+                class="tooltip-text"> and your life partner is a cup of tea. </span></span> <span
+            class="custom-tooltip">
+            Ik hou van je
+            boterachtige mondgevoel.<span class="tooltip-text">I love your buttery mouthfeel.</span></span>
+    </p>
+
+    <p class="pilottext">
+
+        <span class="custom-tooltip">De theepot is rond en mooi, net als een dikke olifant, wit als sneeuw.<span
+                class="tooltip-text">The teapot is round and beautiful, just like
+                a fat
+                elephant, white as snow. </span></span>
+        <span class="custom-tooltip">Ik denk dat
+            deze theepot een beetje
+            gangsta is omdat hij tattoo's heeft.<span class="tooltip-text">I think this teapot is a bit gangsta because
+                it has tattoos.</span></span>
+
+    </p>
+
+
+
+    <table>
+        <tr>
+            <th>Nederlands</th>
+            <th>English</th>
+        </tr>
+        <tr>
+            <td><b>Je bent...</b></td>
+            <td><b>You are...</b></td>
+        </tr>
+        <tr>
+            <td>Je bent heel sterk</td>
+            <td>You are very strong</td>
+        </tr>
+        <tr>
+            <td>Je bent sensueel</td>
+            <td>You are sensual</td>
+        </tr>
+        <tr>
+            <td>Je bent zwaar</td>
+            <td>You are heavy</td>
+        </tr>
+        <tr>
+            <td>Je bent aanwezig</td>
+            <td>You are present</td>
+        </tr>
+        <tr>
+            <td>Je bent geliefd</td>
+            <td>You are loved</td>
+        </tr>
+        <tr>
+            <td>Je bent uniek</td>
+            <td>You are unique</td>
+        </tr>
+        <tr>
+            <td><b>Je hebt...</b></td>
+            <td><b>You have...</b></td>
+        </tr>
+        <tr>
+            <td>Je hebt een boterachtig mondgevoel</td>
+            <td>You have a buttery mouthfeel</td>
+        </tr>
+        <tr>
+            <td>Je hebt geen randen</td>
+            <td>You have no edges</td>
+        </tr>
+        <tr>
+            <td>Je hebt een donkere ziel</td>
+            <td>You have a dark soul</td>
+        </tr>
+        <tr>
+            <td>Je hebt leuke berichten</td>
+            <td>You have nice messages</td>
+        </tr>
+        <tr>
+            <td>Je hebt mooie vormen</td>
+            <td>You have beautiful shapes</td>
+        </tr>
+        <tr>
+            <td><b>Ik vind je...</b></td>
+            <td><b>I find you...</b></td>
+        </tr>
+        <tr>
+            <td>Ik vind je lekker</td>
+            <td>I find you delicious</td>
+        </tr>
+        <tr>
+            <td>Ik vind je onweerstaanbaar</td>
+            <td>I find you irresistible</td>
+        </tr>
+        <tr>
+            <td>Ik vind je bruikbaar</td>
+            <td>I find you useful</td>
+        </tr>
+        <tr>
+            <td>Ik vind je esthetisch</td>
+            <td>I find you aesthetic</td>
+        </tr>
+        <tr>
+            <td>Ik vind je zeldzaam</td>
+            <td>I find you rare</td>
+        </tr>
+        <tr>
+            <td>Ik vind je proportioneel</td>
+            <td>I find you proportional</td>
+        </tr>
+        <tr>
+            <td><b>Je maakt me...</b></td>
+            <td><b>You make me...</b></td>
+        </tr>
+        <tr>
+            <td>Je maakt me gelukkig</td>
+            <td>You make me happy</td>
+        </tr>
+        <tr>
+            <td>Je maakt me aan het rillen</td>
+            <td>You make me shiver</td>
+        </tr>
+        <tr>
+            <td>Je maakt me reflectief</td>
+            <td>You make me reflective</td>
+        </tr>
+        <tr>
+            <td>Je maakt me aan het lachen</td>
+            <td>You make me laugh</td>
+        </tr>
+        <tr>
+            <td>Je maakt me nostalgisch</td>
+            <td>You make me nostalgic</td>
+        </tr>
+        <tr>
+            <td>Je maakt me compleet</td>
+            <td>You make me complete</td>
+        </tr>
+        <tr>
+            <td><b>Je geeft me...</b></td>
+            <td><b>You give me...</b></td>
+        </tr>
+        <tr>
+            <td>Je geeft me een gezellige tijd</td>
+            <td>You give me a cozy time</td>
+        </tr>
+        <tr>
+            <td>Je geeft me het gevoel van liefde</td>
+            <td>You give me the feeling of love</td>
+        </tr>
+        <tr>
+            <td>Je geeft me kracht</td>
+            <td>You give me strength</td>
+        </tr>
+        <tr>
+            <td>Je geeft me vreugde</td>
+            <td>You give me joy</td>
+        </tr>
+        <tr>
+            <td>Je geeft me goede gevoelens</td>
+            <td>You give me good feelings</td>
+        </tr>
+        <tr>
+            <td>Je geeft me leven</td>
+            <td>You give me life</td>
+        </tr>
+
+        <td><b>Als je... dan...</b></td>
+        <td><b>If you... then...</b></td>
+        </tr>
+        <tr>
+            <td>Als je heet bent voel ik me vloeibaar</td>
+            <td>When you're hot I feel liquid</td>
+        </tr>
+        <tr>
+            <td>Als je hetzelfde blijft voel ik me veilig</td>
+            <td>When you stay the same I feel safe</td>
+        </tr>
+        <tr>
+            <td>Als je danst voel ik me heet</td>
+            <td>When you dance I feel hot</td>
+        </tr>
+        <tr>
+            <td>Als je bloeit voel ik me blij</td>
+            <td>When you bloom I feel happy</td>
+        </tr>
+        <tr>
+            <td>Als je op de grond valt voel ik me ontroostbaar</td>
+            <td>When you fall on the ground I feel inconsolable</td>
+        </tr>
+    </table>
+
+
+
+
+    <!-- <h1>💬 Woordenlijst</h1>
+    <p>Een <span class="custom-tooltip">lijst <span class="tooltip-text">list</span> </span> met <span
+            class="custom-tooltip">woorden <span class="tooltip-text">words</span> </span> die <span
+            class="custom-tooltip">tijdens <span class="tooltip-text">during</span> </span> de <span
+            class="custom-tooltip">lessen <span class="tooltip-text">classes</span> </span> <span
+            class="custom-tooltip">zijn gezegd <span class="tooltip-text">have been said</span> </span> , met
+        <span class="custom-tooltip">vertalingen <span class="tooltip-text">translations</span> </span> , <span
+            class="custom-tooltip">zodat <span class="tooltip-text">so that</span> </span>
+        we <span class="custom-tooltip">samen <span class="tooltip-text">together</span> </span> een vocabulaire
+        <span class="custom-tooltip">opbouwen <span class="tooltip-text">build up</span> </span> :)
+    </p>
+
+
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>🇳🇱</th>
+                <th>🇬🇧</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>Broer</td>
+                <td>Brother</td>
+            </tr>
+            <tr>
+                <td>Zus</td>
+                <td>Sister</td>
+            </tr>
+            <tr>
+                <td>Neef</td>
+                <td>Cousin / Nephew</td>
+            </tr>
+            <tr>
+                <td>Nicht</td>
+                <td>Niece</td>
+            </tr>
+            <tr>
+                <td>Ouder(s)</td>
+                <td>Parent(s)</td>
+            </tr>
+            <tr>
+                <td>Vriend</td>
+                <td>Boyfriend / Friend</td>
+            </tr>
+            <tr>
+                <td>Vriendin</td>
+                <td>Girlfriend / Friend</td>
+            </tr>
+
+            <tr>
+                <td>Kat</td>
+                <td>Cat</td>
+            </tr>
+            <tr>
+                <td>Hond</td>
+                <td>Dog</td>
+            </tr>
+            <tr>
+                <td>Dansen</td>
+                <td>Dancing</td>
+            </tr>
+            <tr>
+                <td>Zwemmen</td>
+                <td>Swimming</td>
+            </tr>
+            <tr>
+                <td>Wandelen</td>
+                <td>Walking</td>
+            </tr>
+            <tr>
+                <td>Fietsen</td>
+                <td>Cycling</td>
+            </tr>
+            <tr>
+                <td>Koken</td>
+                <td>Cooking</td>
+            </tr>
+            <tr>
+                <td>Drummen</td>
+                <td>Drumming</td>
+            </tr>
+            <tr>
+                <td>Schilderen</td>
+                <td>Painting</td>
+            </tr>
+            <tr>
+                <td>Lezen</td>
+                <td>Reading</td>
+            </tr>
+            <tr>
+                <td>Netflixen</td>
+                <td>Watching Netflix</td>
+            </tr>
+            <tr>
+                <td>Kunst</td>
+                <td>Art</td>
+            </tr>
+            <tr>
+                <td>Weven</td>
+                <td>Weaving</td>
+            </tr>
+            <tr>
+                <td>Watersport</td>
+                <td>Water sports</td>
+            </tr>
+            <tr>
+                <td>Schrijven</td>
+                <td>Writing</td>
+            </tr>
+            <tr>
+                <td>Podcasts luisteren</td>
+                <td>Listening to podcasts</td>
+            </tr>
+            <tr>
+                <td>Leuk</td>
+                <td>Nice, Fun</td>
+            </tr>
+            <tr>
+                <td>Interessant</td>
+                <td>Interesting</td>
+            </tr>
+            <tr>
+                <td>Lekker</td>
+                <td>Tasty</td>
+            </tr>
+
+            <tr>
+                <td>Enthousiast</td>
+                <td>Enthusiastic</td>
+            </tr>
+            <tr>
+                <td>Vrolijk</td>
+                <td>Cheerful</td>
+            </tr>
+            <tr>
+                <td>Blij</td>
+                <td>Happy</td>
+            </tr>
+            <tr>
+                <td>Hongerig</td>
+                <td>Hungry</td>
+            </tr>
+
+            <tr>
+                <td>Grafisch ontwerper</td>
+                <td>Graphic designer</td>
+            </tr>
+            <tr>
+                <td>Filmmaker</td>
+                <td>Filmmaker</td>
+            </tr>
+            <tr>
+                <td>Interieurontwerper</td>
+                <td>Interior designer</td>
+            </tr>
+            <tr>
+                <td>Studeren</td>
+                <td>Studying</td>
+            </tr>
+            <tr>
+                <td>Werken</td>
+                <td>Working</td>
+            </tr>
+            <tr>
+                <td>Zijn</td>
+                <td>To be</td>
+            </tr>
+            <tr>
+                <td>Hebben</td>
+                <td>To have</td>
+            </tr>
+            <tr>
+                <td>Wonen</td>
+                <td>To live</td>
+            </tr>
+            <tr>
+                <td>Komen</td>
+                <td>To come</td>
+            </tr>
+            <tr>
+                <td>Spreken</td>
+                <td>To speak</td>
+            </tr>
+            <tr>
+                <td>Houden van</td>
+                <td>To like, to love</td>
+            </tr>
+            <tr>
+                <td>Vinden</td>
+                <td>To find</td>
+            </tr>
+            <tr>
+                <td>Werken</td>
+                <td>To work</td>
+            </tr>
+
+        </tbody>
+    </table> -->
+
+
+</body>
+
+</html>
