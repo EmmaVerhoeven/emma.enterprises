@@ -198,32 +198,34 @@
         @media (max-width: 768px) {
             main {
                 display: flex;
-                flex-direction: column;
-                align-items: center;
-                /* Centers everything */
+
+
             }
+
+            .tekstblok {
+                display: block;
+                width: 60%;
+                padding: 10px;
+                margin: 10px;
+                background-color: rgb(255, 255, 255);
+            }
+
 
             .gutter {
                 max-width: 100%;
-                width: 100%;
                 text-align: center;
             }
 
-            #gutter-left,
-            #gutter-right {
-                display: block;
-                width: 100%;
-                /* Ensure full width */
-                margin: 0 auto;
-                /* Center the ads */
-            }
+
+
 
             .gutter-ad {
-                display: block !important;
-                width: 80%;
-                /* Prevents stretching too much */
-                max-width: 300px;
-                margin: 10px auto;
+
+                width: 35vw;
+                /* Relative to screen width */
+                max-width: 65px;
+                /* Prevents them from getting too big */
+                margin: 5px;
             }
         }
     </style>
