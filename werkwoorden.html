@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Werkwoorden</title>
+    <style>
+        header {
+            height: 6vh;
+            width: 100%;
+            background-image: url(images/dutch/nl.jpg);
+            background-size: contain;
+            margin-bottom: -30px;
+
+        }
+
+        .rood {
+            height: 1vh;
+            background-color: rgb(255, 31, 15);
+        }
+
+        .wit {
+            height: 1vh;
+            background-color: white;
+        }
+
+        .blauw {
+            height: 1vh;
+            background-color: rgb(3, 67, 187);
+        }
+
+
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin: 0;
+            background-color: rgb(244, 249, 194);
+            display: flex;
+            /* Flexbox to center content */
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+            /* Center vertically */
+            min-height: 100vh;
+            /* Full height viewport */
+            flex-direction: column;
+            /* Stack elements vertically */
+        }
+
+        main {
+            max-width: 800px;
+
+            margin: 20px auto;
+            /* Center horizontally */
+        }
+
+        img {
+            width: 50vw;
+            max-width: 700px;
+            min-width: 500px;
+            text-align: center;
+            margin: 30px;
+
+        }
+
+
+        h1,
+        h2 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.8em;
+            color: #000000;
+
+
+        }
+
+        a {
+            color: forestgreen;
+        }
+
+
+        h3 {
+            margin-bottom: -5px;
+        }
+
+
+        .divider {
+            width: 500px;
+            border-top: rgb(31, 216, 7)solid 1px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+
+        table {
+            border-collapse: collapse;
+            margin: 1rem 0;
+            padding: 1rem;
+
+        }
+
+        th,
+        td {
+            border: 1px solid #000;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            COLOR: BLACK;
+        }
+
+
+        .voorbeeldzin {
+            font-size: 2em;
+            margin-bottom: -5px;
+        }
+
+        .voorbeeldtrans {
+            font-size: 1.5em;
+        }
+
+        .hl1 {
+            background-color: yellow;
+        }
+
+        .hl2 {
+            background-color: rgb(30, 255, 0);
+        }
+
+        .hldus {
+            background-color: rgb(255, 131, 201);
+        }
+
+
+        .pilottext {
+            width: 60%;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 10pt;
+            background-color: white;
+            padding: 10px;
+            border: 1px grey solid;
+        }
+
+        .custom-tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted #666;
+            cursor: help;
+        }
+
+        .custom-tooltip .tooltip-text {
+            visibility: hidden;
+            background-color: rgb(255, 30, 30);
+            color: white;
+            text-align: center;
+            padding: 2px 4px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .custom-tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+
+
+        @media (max-width: 768px) {
+
+            body {
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+            }
+
+            main {
+                padding: 0 15px 0 15px;
+
+            }
+
+
+        }
+    </style>
+
+
+    </style>
+</head>
+
+<body>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>🇳🇱 Werkwoord</th>
+                <th>🇬🇧 Vertaling</th>
+                <th>I</th>
+                <th>You (singular)</th>
+                <th>He/she</th>
+                <th>We/you/they (plural)</th>
+                <th>Past participle (has been/done/given)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>zijn</td>
+                <td>to be</td>
+                <td>ik ben</td>
+                <td>jij bent</td>
+                <td>hij is</td>
+                <td>wij / jullie / zij zijn</td>
+                <td><u>(ben(t) / is / zijn)</u> geweest</td>
+            </tr>
+            <tr>
+                <td>hebben</td>
+                <td>to have</td>
+                <td>ik heb</td>
+                <td>jij hebt</td>
+                <td>hij heeft</td>
+                <td>wij / jullie / zij hebben</td>
+                <td>(heb(t) / heeft / hebben) gehad</td>
+            </tr>
+            <tr>
+                <td>heten</td>
+                <td>to be named</td>
+                <td>ik heet</td>
+                <td>jij heet</td>
+                <td>hij heet</td>
+                <td>wij / jullie / zij heten</td>
+                <td>(heb(t) / heeft / hebben) geheten</td>
+            </tr>
+
+            <tr>
+                <td>doen</td>
+                <td>to do</td>
+                <td>ik doe</td>
+                <td>jij doet</td>
+                <td>hij doet</td>
+                <td>wij / jullie / zij doen</td>
+                <td>(heb(t) / heeft / hebben) gedaan</td>
+            </tr>
+            <tr>
+                <td>gaan</td>
+                <td>to go</td>
+                <td>ik ga</td>
+                <td>jij gaat</td>
+                <td>hij gaat</td>
+                <td>wij / jullie / zij gaan</td>
+                <td><u>(ben(t) / is / zijn)</u> geweest</td>
+            </tr>
+            <tr>
+                <td>houden van</td>
+                <td>to like/love</td>
+                <td>ik houd van</td>
+                <td>jij houdt van</td>
+                <td>hij houdt van</td>
+                <td>wij / jullie / zij houden van</td>
+                <td>(heb(t) / heeft / hebben) gehouden van</td>
+            </tr>
+            <tr>
+                <td>vinden</td>
+                <td>to find</td>
+                <td>ik vind</td>
+                <td>jij vindt</td>
+                <td>hij vindt</td>
+                <td>wij / jullie / zij vinden</td>
+                <td>(heb(t) / heeft / hebben) gevonden</td>
+            </tr>
+            <tr>
+                <td>willen</td>
+                <td>to want</td>
+                <td>ik wil</td>
+                <td>jij wilt</td>
+                <td>hij wil</td>
+                <td>wij / jullie / zij willen</td>
+                <td>(heb(t) / heeft / hebben) gewild</td>
+            </tr>
+            <tr>
+                <td>(heb(t) / heeft / hebben) geven</td>
+                <td>to give</td>
+                <td>ik geef</td>
+                <td>jij geeft</td>
+                <td>hij geeft</td>
+                <td>wij / jullie / zij geven</td>
+                <td>(heb(t) / heeft / hebben) gegeven</td>
+            </tr>
+            <tr>
+                <td>maken</td>
+                <td>to make</td>
+                <td>ik maak</td>
+                <td>jij maakt</td>
+                <td>hij maakt</td>
+                <td>wij / jullie / zij maken</td>
+                <td>(heb(t) / heeft / hebben) gemaakt</td>
+            </tr>
+            <tr>
+                <td>komen</td>
+                <td>to come</td>
+                <td>ik kom</td>
+                <td>jij komt</td>
+                <td>hij komt</td>
+                <td>wij / jullie / zij komen</td>
+                <td><u>(ben(t) / is / zijn)</u> geweest</td>
+            </tr>
+            <tr>
+                <td>zien</td>
+                <td>to see</td>
+                <td>ik zie</td>
+                <td>jij ziet</td>
+                <td>hij ziet</td>
+                <td>wij / jullie / zij zien</td>
+                <td>(heb(t) / heeft / hebben) gezien</td>
+            </tr>
+            <tr>
+                <td>horen</td>
+                <td>to hear</td>
+                <td>ik hoor</td>
+                <td>jij hoort</td>
+                <td>hij hoort</td>
+                <td>wij / jullie / zij horen</td>
+                <td>(heb(t) / heeft / hebben) gehoord</td>
+            </tr>
+            <tr>
+                <td>voelen</td>
+                <td>to feel</td>
+                <td>ik voel</td>
+                <td>jij voelt</td>
+                <td>hij voelt</td>
+                <td>wij / jullie / zij voelen</td>
+                <td>(heb(t) / heeft / hebben) gevoeld</td>
+            </tr>
+            <tr>
+                <td>slapen</td>
+                <td>to sleep</td>
+                <td>ik slaap</td>
+                <td>jij slaapt</td>
+                <td>hij slaapt</td>
+                <td>wij / jullie / zij slapen</td>
+                <td>(heb(t) / heeft / hebben) geslapen</td>
+            </tr>
+            <tr>
+                <td>wonen</td>
+                <td>to live</td>
+                <td>ik woon</td>
+                <td>jij woont</td>
+                <td>hij woont</td>
+                <td>wij / jullie / zij wonen</td>
+                <td>(heb(t) / heeft / hebben) gewoond</td>
+            </tr>
+            <tr>
+                <td>zitten</td>
+                <td>to sit</td>
+                <td>ik zit</td>
+                <td>jij zit</td>
+                <td>hij zit</td>
+                <td>wij / jullie / zij zitten</td>
+                <td>(heb(t) / heeft / hebben) gezeten</td>
+            </tr>
+            <tr>
+                <td>eten</td>
+                <td>to eat</td>
+                <td>ik eet</td>
+                <td>jij eet</td>
+                <td>hij eet</td>
+                <td>wij / jullie / zij eten</td>
+                <td>(heb(t) / heeft / hebben) gegeten</td>
+            </tr>
+            <tr>
+                <td>drinken</td>
+                <td>to drink</td>
+                <td>ik drink</td>
+                <td>jij drinkt</td>
+                <td>hij drinkt</td>
+                <td>wij / jullie / zij drinken</td>
+                <td>(heb(t) / heeft / hebben) gedronken</td>
+            </tr>
+            <tr>
+                <td>spreken</td>
+                <td>to speak</td>
+                <td>ik spreek</td>
+                <td>jij spreekt</td>
+                <td>hij spreekt</td>
+                <td>wij / jullie / zij spreken</td>
+                <td>(heb(t) / heeft / hebben) gesproken</td>
+            </tr>
+            <tr>
+                <td>werken</td>
+                <td>to work</td>
+                <td>ik werk</td>
+                <td>jij werkt</td>
+                <td>hij werkt</td>
+                <td>wij / jullie / zij werken</td>
+                <td>(heb(t) / heeft / hebben) gewerkt</td>
+            </tr>
+            <tr>
+                <td>lezen</td>
+                <td>to read</td>
+                <td>ik lees</td>
+                <td>jij leest</td>
+                <td>hij leest</td>
+                <td>wij / jullie / zij lezen</td>
+                <td>(heb(t) / heeft / hebben) gelezen</td>
+            </tr>
+            <tr>
+                <td>bellen</td>
+                <td>to call</td>
+                <td>ik bel</td>
+                <td>jij belt</td>
+                <td>hij belt</td>
+                <td>wij / jullie / zij bellen</td>
+                <td>(heb(t) / heeft / hebben) gebeld</td>
+            </tr>
+            <tr>
+                <td>schrijven</td>
+                <td>to write</td>
+                <td>ik schrijf</td>
+                <td>jij schrijft</td>
+                <td>hij schrijft</td>
+                <td>wij / jullie / zij schrijven</td>
+                <td>(heb(t) / heeft / hebben) geschreven</td>
+            </tr>
+            <tr>
+                <td>lopen</td>
+                <td>to walk</td>
+                <td>ik loop</td>
+                <td>jij loopt</td>
+                <td>hij loopt</td>
+                <td>wij / jullie / zij lopen</td>
+                <td>(heb(t) / heeft / hebben) gelopen</td>
+            </tr>
+            <tr>
+                <td>bestellen</td>
+                <td>to order</td>
+                <td>ik bestel</td>
+                <td>jij bestelt</td>
+                <td>hij bestelt</td>
+                <td>wij / jullie / zij bestellen</td>
+                <td>(heb(t) / heeft / hebben) besteld</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+</body>
