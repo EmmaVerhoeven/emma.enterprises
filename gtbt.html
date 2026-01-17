@@ -120,35 +120,32 @@
     <script>
         document.getElementById('emailForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            var contactField = document.getElementById('contact').value;
-            console.log('Contact Field Value: ', contactField); // Log input value
-            var data = {
-                contact: contactField,
-            };
+            const contactField = document.getElementById('contact').value;
+            console.log('Contact Field Value:', contactField);
+
+            const data = { contact: contactField };
 
             fetch('https://script.google.com/macros/s/AKfycbxITtf0cBZSmnVibdNm1f4Mvu5Y9sCx0MCymIVNGiiZiTD5DzoepSw0ryvwJa-9VM1d/exec', {
                 method: 'POST',
-                mode: 'no-cors',  // Added no-cors mode
-                body: JSON.stringify(data),
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
             })
-                .then(function (response) {
-                    console.log('Response Status:', response.status); // Log response status
-                    if (response.status === 200) {
-                        document.getElementById('contact').value = ''; // Clear the input field
-                        return '';
-                    }
+                .then(response => response.json())
+                .then(result => {
+                    console.log('Result from Google Script:', result);
+                    document.getElementById('contact').value = ''; // Clear input
+                    document.getElementById('confirmationMessage').textContent =
+                        'Thank you, we aim to discuss this on next GT🛌T show: 19 Jan 9PM 💌';
                 })
-                .then(function (text) {
-                    console.log('Success Text:', text); // Log success message
-                    document.getElementById('confirmationMessage').textContent = 'Thank you, we aim to discuss this on next GT🛌T show: 19 Jan 9PM 💌';
-                })
-                .catch(function (error) {
-                    console.error('Error: ', error); // Log error
+                .catch(error => {
+                    console.error('Error sending data:', error);
+                    document.getElementById('confirmationMessage').textContent =
+                        'Oops! Something went wrong. Please try again later.';
                 });
         });
-
     </script>
 
 </body>
+
 
 </html>
