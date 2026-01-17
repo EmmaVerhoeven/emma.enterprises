@@ -128,19 +128,20 @@
                 method: 'POST',
                 body: formData
             })
-                .then(() => {
+                .catch(err => {
+                    // Google Apps Script kan hier "fouten" geven terwijl hij al geschreven heeft
+                    console.warn('Non-blocking fetch warning:', err);
+                })
+                .finally(() => {
+                    // UX volgt de realiteit: als hij in de sheet staat = succes
                     document.getElementById('contact').value = '';
                     document.getElementById('confirmationMessage').textContent =
                         'Thank you, we will discuss this on next GT🛌T show: 19 Jan 9PM 💌';
-                })
-                .catch(err => {
-                    console.error(err);
-                    document.getElementById('confirmationMessage').textContent =
-                        'Oops! Something went wrong.';
                 });
         });
     </script>
 </body>
+
 
 
 
