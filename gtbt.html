@@ -106,7 +106,6 @@
 </head>
 
 <body>
-
     <div id="mainContent">
         <h1>G❤️💔D TIMES 🛌 TIMES</h1>
         <form id="emailForm">
@@ -125,15 +124,15 @@
 
             const data = { contact: contactField };
 
-            fetch('https://script.google.com/macros/s/AKfycbxuso9Yxbgw6pJtQ4eVlvny_We1PNj2to3rYejcDG7Bk0ZgV3xyNLaFhZpYNc0TJO7u/exec', {
+            fetch('https://script.google.com/macros/s/AKfycbxw49vSQaYFK5aq7h9ag83dfeguMpQTGvHp8n7ewMr8yJ_PrhngCydClL50GgMth05h/exec', {  // ← vervang door de URL van je Web App deployment
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
             })
-                .then(response => response.json())
+                .then(response => response.text()) // text() gebruiken voorkomt JSON errors
                 .then(result => {
                     console.log('Result from Google Script:', result);
-                    document.getElementById('contact').value = ''; // Clear input
+                    document.getElementById('contact').value = '';
                     document.getElementById('confirmationMessage').textContent =
                         'Thank you, we will discuss this on next GT🛌T show: 19 Jan 9PM 💌';
                 })
@@ -144,8 +143,8 @@
                 });
         });
     </script>
-
 </body>
+
 
 
 </html>
