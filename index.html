@@ -1,233 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="style.css">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emma's Site</title>
     <style>
-        body {
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 1em;
-            margin: 0;
 
-        }
-
-        .tekstblok {
-            display: block;
-            padding: 20px;
-            margin: 20px;
-            background-color: rgb(255, 255, 255);
-        }
-
-        main {
-            display: grid;
-            grid-template-columns: 2fr 3fr 2fr;
-            columns: 3;
-            min-height: 100dvh;
-        }
-
-        main #gutter-left {
-
-            grid-column: 1;
-            margin-right: 0px;
-            margin-left: auto;
-
-            /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-        }
-
-
-        main #tekstblok {
-            grid-column: 2;
-        }
-
-        main #gutter-right {
-            grid-column: 3;
-            margin-left: 0px;
-            margin-right: auto;
-            /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-        }
-
-
-        .gutter {
-            max-width: 10vw;
-            margin-top: 20px;
-
-        }
-
-
-        .gutter-ad {
-            display: block;
-            width: 100%;
-            margin-bottom: 10px;
-
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-
-        a {
-            color: blue;
-        }
-
-        a:visited {
-            color: red;
-        }
-
-
-        .project {
-            margin-left: 20px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-
-        }
-
-        .project-thumb {
-            display: block;
-            max-width: 200px;
-            padding: 10px;
-        }
-
-        details p {
-            font-size: .8em;
-            font-style: italic;
-        }
-
-        summary {
-
-            line-height: 1.5em;
-        }
-
-        .project-img {
-            width: 140px;
-            margin: 2px;
-            border-style: ridge;
-            cursor: zoom-in;
-            /* Indicates that the image is clickable */
-        }
-
-        .project-img2 {
-            width: 170px;
-            margin: 4px;
-            border-style: ridge;
-            cursor: zoom-in;
-            /* Indicates that the image is clickable */
-        }
-
-        .project-img-box {
-            max-width: 800px;
-        }
-
-        .lightbox {
-            display: none;
-            /* Hidden by default */
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            /* Black background with 50% opacity */
-            justify-content: center;
-            /* Center horizontally */
-            align-items: center;
-            /* Center vertically */
-            flex-direction: column;
-            /* Stack content vertically */
-        }
-
-        .lightbox-content {
-            display: none;
-            max-width: 70%;
-            max-height: 70%;
-            display: block;
-            border-style: ridge;
-            margin-bottom: 10px;
-            /* Space between image and caption */
-            cursor: zoom-out;
-        }
-
-        .lightbox-caption {
-            width: 40%;
-            /* Match the max-width of the image */
-            max-width: 40%;
-            /* Ensure it doesn't exceed the image's max-width */
-            background-color: white;
-            /* White background */
-            color: black;
-            /* Black text */
-            text-align: center;
-            /* Center the text */
-            padding: 10px;
-            /* Add some padding */
-            box-sizing: border-box;
-            /* Include padding in width calculation */
-            margin-bottom: 20px;
-            /* Space between caption and close button */
-            word-wrap: break-word;
-            /* Handle long words */
-            font-style: italic;
-        }
-
-        .close {
-            display: none;
-            position: absolute;
-            top: 50px;
-            right: 100px;
-            color: #ffffff;
-            font-size: 40px;
-            transition: 0.3s;
-            font-family: "Times New Roman", Times, serif;
-            /* Times New Roman font */
-            content: "X";
-            /* Capital X */
-        }
-
-        .close:hover,
-        .close:focus {
-            display: none;
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .logo {
-            max-width: 400px;
-        }
-
-        @media (max-width: 768px) {
-            main {
-                display: flex;
-
-
-            }
-
-            .tekstblok {
-                display: block;
-                width: 60%;
-                padding: 10px;
-                margin: 10px;
-                background-color: rgb(255, 255, 255);
-            }
-
-
-            .gutter {
-                max-width: 100%;
-                text-align: center;
-            }
-
-
-
-
-            .gutter-ad {
-
-                width: 35vw;
-                /* Relative to screen width */
-                max-width: 65px;
-                /* Prevents them from getting too big */
-                margin: 5px;
-            }
-        }
     </style>
     <script>
         function openLightbox(img) {
@@ -349,7 +129,10 @@
 
 
             <h2>EMMA VERHOEVEN!!!</h2>
-            Welcome to this handmade website by & about Emma Verhoeven.
+            Welcome to this handmade website about Emma Verhoeven.
+
+            <span id="updated">this website was last updated on 21/01/2026 during a <a
+                    href="https://www.are.na/block/42759784">Website Therapy</a> session</span>
 
 
             <h2>About</h2>
@@ -357,67 +140,19 @@
             <p>Emma is an artist, designer, writer, organiser, and educator living and working in Rotterdam, NL. As a
                 founder and member of <a href="http://extrapractice.space" target="_blank">Extra Practice</a> she is
                 passionate about creating collective space & time for playful (self-)reflection and experimental
-                learning.
-                In her own visual & installation work she investigates the evolving definitions of success and meaning
+                learning. She loves to organise and host <a
+                    href="https://www.are.na/extra-practice/events-pocwu1jcpn4">workshops and events</a> at XP whenever
+                she can. <br> <br>
+                In her own visual & installation work Emma investigates the evolving definitions of success and meaning
                 within commerce-driven media landscapes, mainly focusing on self-improvement and mental health
                 themes. Her
-                latest fascination is <a style="color:green" href="http://logging.zone/log4/index.html"
-                    target="_blank">regenerative
-                    living</a>, sprouted from an ongoing collaboration with
-                agro-ecologist-sister <a style="color:rgb(255, 111, 0)" href="http://reneesfarm.farm"
-                    target="_blank">Renée</a>.
+                latest fascination is <a style="color:green" href="robida-essay.html" target="_blank">regenerative
+                    living</a>, sprouted from an <a style="color:rgb(255, 111, 0)" href="http://verrehoeve.nl"
+                    target="_blank">ongoing collaboration</a> with
+                agro-ecologist-sister Renée.
             </p>
 
 
-            A few months ago Extra Practice hosted 𝘌̶𝘹̶𝘵̶𝘳̶𝘢̶ 𝓔𝓶𝓶𝓪’𝓼 Practice🔑 🧜🏻‍♀️ 🧩, an exhibition of
-            Emma's
-            favourite projects. Click this arrow to see some pics:
-            <details style="display:inline-block">
-
-                <summary>
-
-
-                </summary>
-                <div class="project-img-box">
-
-                    <img class="project-img2" src="images/emmapractice/ep2.png" alt="image" onclick="openLightbox(this)"
-                        data-caption="the flyer on the outside of XP that guided visitors through Emma's work as a 10-step therapy program">
-                    <img class="project-img2" src="images/emmapractice/ep1.png" alt="image" onclick="openLightbox(this)"
-                        data-caption="a part of the installation Escape Here Now and a laptop with the online game version">
-                    <img class="project-img2" src="images/emmapractice/ep5.png" alt="image" onclick="openLightbox(this)"
-                        data-caption="Part of EHN and the classic VRcation chair: 'Many believe that in order to find our
-                    True Self, we must travel far and long.
-                    But if ‘to travel is to take a journey
-                    within’, do we really need to move our
-                    bodies to the other side of the planet? The sooner we tick those world wonders of our list, the sooner we can start the journey towards self-actualization... '">
-
-                    <img class="project-img2" src="images/emmapractice/ep3.png" alt="image" onclick="openLightbox(this)"
-                        data-caption="'In this step, we start challenging the idea of the ‘True Inner Self’. The concept has become a common
-                    narrative in modern Western imaginations, but opposed to this are the widely held academic viewpoints
-                    that there is no such thing as one true self, but that our self, or rather our multiple selves, are fragmented and relational. In line with this are theories that explicitely
-                    regard objects as fundamental ingredients of our selves, also called the ‘extended self’. If we are what we posess,
-                    maybe it’s time to not only zoom out of our selves, but our posessions too?'">
-                    <img class="project-img2" src="images/emmapractice/ep4.png" alt="image" onclick="openLightbox(this)"
-                        data-caption="'How does it feel to take an overview perspective of your own micro-universe, AKA your home? Does it put things into perspective?
-                    Once you feel comfortable in astronaut-mode, feel free to try God-mode and move things around in your home as if you were the creator Herself.'">
-                    <img class="project-img2" src="images/emmapractice/ep9.png" alt="image" onclick="openLightbox(this)"
-                        data-caption="VLIEGANGST MET HEDWIG: 'Now that we have a clear overview of who we are, It’s time to manifest your true purpose and life goals. Let's look at
-                    our extraordinary case study: Hedwig; Former flight attendant - current yoga teacher - aspiring life coach. Instead of waiting until she’s reached her
-                    true potential, she is pushed into advertising her
-                    ultimate alter ego. Does visualising your ideal self help you get there? What would your ad say?'">
-
-                    <img class="project-img2" src="images/emmapractice/ep6.png" alt="image" onclick="openLightbox(this)"
-                        data-caption="INNER FARM: 'This step is still in beta-testing-mode, but we give you an exclusive first look into this brand new approach. The method is all about learning to recognize our
-                    inner farm, and start the transition from conventional farming – which ultimately exhausts our inner farmland – to becoming regenerative! Expert Renée will guide us with her sustainability and circularity knowledge.'">
-                    <img class="project-img2" src="images/emmapractice/ep7.png" alt="image" onclick="openLightbox(this)"
-                        data-caption="EHN and a part of United Mental States, the island + film">
-                    <img class="project-img2" src="images/emmapractice/ep8.png" alt="image" onclick="openLightbox(this)"
-                        data-caption="MERMAID COUNSELLING: 'In this step, we aim to start an honest conversation with our inner child through naive, carefree mermaid-drawing.
-                    What did you draw when you were young? When did external pressures and expectations start keeping you
-                    from expressing your lighthearted inner truths? Maybe it’s time to pick up a crayon and
-                    look your drawing in the eyes.'">
-                </div>
-            </details>
 
 
 
@@ -427,7 +162,7 @@
             <h2>FAQ</h2>
 
             <details>
-                <summary>What does Emma Verhoeven do, exactly?</summary>
+                <summary>What does Emma do, exactly?</summary>
 
                 <p>
                     Listen, there's just a lot of things, ok. Emma never chose one path, one medium or one topic, but
@@ -444,20 +179,7 @@
                     or something else.
                 </p>
 
-                <details>
-                    <summary>Ok, but if she had to choose one description, what would we call Emma?</summary>
 
-                    <p>
-                        Emma often uses the word 'media artist' (or 'mediakunstenaar' in Dutch) to describe herself. It
-                        works
-                        quite well because she uses a lot of different media as her <i>material</i>, her work is often
-                        <i>about</i> digital media and then the result also is often <i>formatted</i> in a (partly)
-                        digital
-                        medium. But you can just call her Emma
-
-                    </p>
-
-                </details>
             </details>
 
 
@@ -472,18 +194,38 @@
                     academies, often at high schools via <a href="https://mu.nl">MU Hybrid Art House</a>, and also gets
                     hired to do animations, video
                     editing,
-                    graphic design and illustration for both companies and individuals. She even does translation work
-                    if you
-                    pay
-                    her well, and she'll teach a <a href="https://forms.gle/AYUT8k9goRbxsxGQ8">Dutch course</a> next
-                    year. Every now and then she'll apply for an artist
-                    grant, she should probably start doing that again..
+                    graphic design and illustration for both companies and individuals. Recently, she started working as
+                    an education designer for <a href="https://www.engagerotterdam.nl/nl-nl/manifest">engage
+                        Rotterdam</a>, a newmovement connecting makers, residents, entrepreneurs and activists to tackle
+                    big city issues. <br>
+                    Next to this, she also runs a small <a href="http://verrehoeve.nl">catering business</a> with her
+                    sisters, cooking local and seasonal dinners on fun locations – preferably farms. She also teaches a
+                    <a href="https://forms.gle/AYUT8k9goRbxsxGQ8">Dutch course</a>
+                    and
+                    off - join this <a href="">signal group</a> if you want to be updated of next classes/courses!
+                    <br>Every now and then she'll apply for an artist
+                    grant, she should probably start doing that again.
                 </p>
 
             </details>
 
             <details open>
                 <summary>What are some examples of Emma's projects?</summary>
+
+
+
+                <details class="project">
+                    <summary>♻️ I Want To Become A Regenerative Farm</summary>
+                    <a style="color:green" href="robida-essay.html">Read the essay online</a>
+                </details>
+
+
+                <details class="project">
+                    <summary>Creative Research Crew</summary>
+
+                </details>
+
+
 
 
                 <details class="project" id="details-themework">
@@ -514,6 +256,67 @@
                     </div>
                 </details>
 
+
+                <details class="project">
+
+
+                    <summary>🧜🏻‍♀️ 𝘌̶𝘹̶𝘵̶𝘳̶𝘢̶ 𝓔𝓶𝓶𝓪’𝓼 Practice</summary>one summer ago Extra Practice
+                    hosted 𝘌̶𝘹̶𝘵̶𝘳̶𝘢̶ 𝓔𝓶𝓶𝓪’𝓼 Practice, an exhibition of
+                    Emma's
+                    favourite projects. Click this arrow to see some pics:
+                    <details style="display:inline-block">
+
+                        <summary>
+
+
+                        </summary>
+                        <div class="project-img-box">
+
+                            <img class="project-img2" src="images/emmapractice/ep2.png" alt="image"
+                                onclick="openLightbox(this)"
+                                data-caption="the flyer on the outside of XP that guided visitors through Emma's work as a 10-step therapy program">
+                            <img class="project-img2" src="images/emmapractice/ep1.png" alt="image"
+                                onclick="openLightbox(this)"
+                                data-caption="a part of the installation Escape Here Now and a laptop with the online game version">
+                            <img class="project-img2" src="images/emmapractice/ep5.png" alt="image"
+                                onclick="openLightbox(this)"
+                                data-caption="Part of EHN and the classic VRcation chair: 'Many believe that in order to find our
+                    True Self, we must travel far and long.
+                    But if ‘to travel is to take a journey
+                    within’, do we really need to move our
+                    bodies to the other side of the planet? The sooner we tick those world wonders of our list, the sooner we can start the journey towards self-actualization... '">
+
+                            <img class="project-img2" src="images/emmapractice/ep3.png" alt="image"
+                                onclick="openLightbox(this)" data-caption="'In this step, we start challenging the idea of the ‘True Inner Self’. The concept has become a common
+                    narrative in modern Western imaginations, but opposed to this are the widely held academic viewpoints
+                    that there is no such thing as one true self, but that our self, or rather our multiple selves, are fragmented and relational. In line with this are theories that explicitely
+                    regard objects as fundamental ingredients of our selves, also called the ‘extended self’. If we are what we posess,
+                    maybe it’s time to not only zoom out of our selves, but our posessions too?'">
+                            <img class="project-img2" src="images/emmapractice/ep4.png" alt="image"
+                                onclick="openLightbox(this)"
+                                data-caption="'How does it feel to take an overview perspective of your own micro-universe, AKA your home? Does it put things into perspective?
+                    Once you feel comfortable in astronaut-mode, feel free to try God-mode and move things around in your home as if you were the creator Herself.'">
+                            <img class="project-img2" src="images/emmapractice/ep9.png" alt="image"
+                                onclick="openLightbox(this)" data-caption="VLIEGANGST MET HEDWIG: 'Now that we have a clear overview of who we are, It’s time to manifest your true purpose and life goals. Let's look at
+                    our extraordinary case study: Hedwig; Former flight attendant - current yoga teacher - aspiring life coach. Instead of waiting until she’s reached her
+                    true potential, she is pushed into advertising her
+                    ultimate alter ego. Does visualising your ideal self help you get there? What would your ad say?'">
+
+                            <img class="project-img2" src="images/emmapractice/ep6.png" alt="image"
+                                onclick="openLightbox(this)"
+                                data-caption="INNER FARM: 'This step is still in beta-testing-mode, but we give you an exclusive first look into this brand new approach. The method is all about learning to recognize our
+                    inner farm, and start the transition from conventional farming – which ultimately exhausts our inner farmland – to becoming regenerative! Expert Renée will guide us with her sustainability and circularity knowledge.'">
+                            <img class="project-img2" src="images/emmapractice/ep7.png" alt="image"
+                                onclick="openLightbox(this)"
+                                data-caption="EHN and a part of United Mental States, the island + film">
+                            <img class="project-img2" src="images/emmapractice/ep8.png" alt="image"
+                                onclick="openLightbox(this)" data-caption="MERMAID COUNSELLING: 'In this step, we aim to start an honest conversation with our inner child through naive, carefree mermaid-drawing.
+                    What did you draw when you were young? When did external pressures and expectations start keeping you
+                    from expressing your lighthearted inner truths? Maybe it’s time to pick up a crayon and
+                    look your drawing in the eyes.'">
+                        </div>
+                    </details>
+                </details>
 
                 <details class="project" id="details-ums">
                     <summary id="title-ums"> 🗺️ United Mental States (workshop, film, installation)
@@ -746,7 +549,13 @@
 
         <!-- Right gutter-->
         <div class="gutter" id="gutter-right">
-            <img class="gutter-ad" src="images/TW2.gif" alt=""><a href="/dutch.html" target="blank">
+
+            <a href="themework.html"><img class="gutter-ad" src="images/TW2.gif" alt=""></a>
+            <a href="robida-essay.html"><img class="gutter-ad" src="images/iwtbarf/1.png" alt=""></a>
+
+
+
+            <a href="/dutch.html" target="blank">
                 <img class="gutter-ad" src="images/dutch/dutch.gif" alt="">
             </a>
             <a href="https://emmaverhoeven.itch.io/escape-here-now" target="blank"> <img class="gutter-ad"

@@ -1,0 +1,220 @@
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1em;
+  margin: 0;
+}
+
+.tekstblok {
+  display: block;
+  padding: 20px;
+  margin: 20px;
+  background-color: rgb(255, 255, 255);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr;
+  columns: 3;
+  min-height: 100dvh;
+}
+
+main #gutter-left {
+  grid-column: 1;
+  margin-right: 0px;
+  margin-left: auto;
+
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+main #tekstblok {
+  grid-column: 2;
+}
+
+main #gutter-right {
+  grid-column: 3;
+  margin-left: 0px;
+  margin-right: auto;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.gutter {
+  max-width: 10vw;
+  margin-top: 20px;
+}
+
+.gutter-ad {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+a {
+  color: blue;
+}
+
+a:visited {
+  color: red;
+}
+
+.project {
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.project-thumb {
+  display: block;
+  max-width: 200px;
+  padding: 10px;
+}
+
+details p {
+  font-size: 0.8em;
+  font-style: italic;
+}
+
+summary {
+  line-height: 1.5em;
+}
+
+.project-img {
+  width: 140px;
+  margin: 2px;
+  border-style: ridge;
+  cursor: zoom-in;
+  /* Indicates that the image is clickable */
+}
+
+.project-img2 {
+  width: 170px;
+  margin: 4px;
+  border-style: ridge;
+  cursor: zoom-in;
+  /* Indicates that the image is clickable */
+}
+
+.project-img-box {
+  max-width: 800px;
+}
+
+.lightbox {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Black background with 50% opacity */
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  flex-direction: column;
+  /* Stack content vertically */
+}
+
+.lightbox-content {
+  display: none;
+  max-width: 70%;
+  max-height: 70%;
+  display: block;
+  border-style: ridge;
+  margin-bottom: 10px;
+  /* Space between image and caption */
+  cursor: zoom-out;
+}
+
+.lightbox-caption {
+  width: 40%;
+  /* Match the max-width of the image */
+  max-width: 40%;
+  /* Ensure it doesn't exceed the image's max-width */
+  background-color: white;
+  /* White background */
+  color: black;
+  /* Black text */
+  text-align: center;
+  /* Center the text */
+  padding: 10px;
+  /* Add some padding */
+  box-sizing: border-box;
+  /* Include padding in width calculation */
+  margin-bottom: 20px;
+  /* Space between caption and close button */
+  word-wrap: break-word;
+  /* Handle long words */
+  font-style: italic;
+}
+
+.close {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 100px;
+  color: #ffffff;
+  font-size: 40px;
+  transition: 0.3s;
+  font-family: "Times New Roman", Times, serif;
+  /* Times New Roman font */
+  content: "X";
+  /* Capital X */
+}
+
+.close:hover,
+.close:focus {
+  display: none;
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.logo {
+  max-width: 400px;
+}
+
+@media (max-width: 768px) {
+  main {
+    display: flex;
+  }
+
+  .tekstblok {
+    display: block;
+    width: 60%;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+  }
+
+  .gutter {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .gutter-ad {
+    width: 35vw;
+    /* Relative to screen width */
+    max-width: 65px;
+    /* Prevents them from getting too big */
+    margin: 5px;
+  }
+}
+
+#updated {
+  display: inline-block;
+  font-size: 9pt;
+  font-style: italic;
+  background-color: rgb(215, 215, 215);
+  color: rgb(69, 69, 69);
+  border: 2px ridge rgb(0, 255, 94);
+  margin: 1em 0;
+  padding: 5px;
+}
+
+#updated a {
+  color: blue;
+}
