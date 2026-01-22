@@ -95,6 +95,12 @@ summary {
   /* Indicates that the image is clickable */
 }
 
+.project-img3 {
+  width: 220px;
+  margin: 2px;
+  filter: drop-shadow(5px 5px 2px gray);
+}
+
 .project-img-box {
   max-width: 800px;
 }
