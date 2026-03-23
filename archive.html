@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive of Emma's work</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+
+        header {
+            font-family: 'Times New Roman', Times, serif;
+
+            font-size: 16px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+            padding-right: 5px;
+            line-height: 26px;
+            color: #0F0F0F;
+            width: 100%;
+            text-align: top;
+
+        }
+
+
+
+        header a {
+            text-decoration: none;
+            cursor: pointer;
+            color: #0F0F0F;
+        }
+
+
+
+
+        main {
+            padding-right: 0px;
+        }
+
+
+
+        .container {
+            width: 100%;
+            padding: 5px;
+            float: left;
+        }
+
+        .container.projects {
+            width: 100%;
+        }
+
+        .container.left {
+            width: 100%;
+
+        }
+
+
+
+
+
+        .row:after {
+
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .medium {
+            font-family: helvetica neue, helvetica, sans-serif;
+            ;
+            font-size: 18px;
+            font-style: bold;
+            margin-top: 0px;
+            margin-bottom: 30px;
+            font-weight: normal;
+            width: 100;
+
+        }
+
+
+
+        table {
+            border-spacing: 0px;
+            width: 100%;
+
+
+        }
+
+
+
+        td,
+        th {
+            font-family: 'Times New Roman', Times, serif;
+            ;
+            border-bottom: 1px solid grey;
+            /* Add a hairline between each row */
+            /* border: solid 1px grey; */
+            border-top: solid 1px black;
+            border-bottom: solid 1px black;
+            padding-right: 15px;
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-bottom: 10px;
+            /* Increase cell padding */
+            text-align: left;
+            vertical-align: top;
+            line-height: 24px;
+            border-collapse: collapse;
+
+
+
+        }
+
+
+
+        th {
+            font-size: 16px;
+            border-top: 1px solid grey;
+            font-weight: normal;
+        }
+
+        tbody {
+
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 16px;
+        }
+
+
+        /* Thumbnail image size */
+
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 4px;
+        }
+
+        img {
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
+        /* Project page styling */
+
+        .row {
+            overflow: hidden;
+            width: 100%;
+        }
+
+
+        .column_project {
+
+            display: block;
+            padding-top: 20px;
+            padding-right: 20px;
+            float: left;
+            width: 50%;
+            font-size: 16px;
+            line-height: 20px;
+            border-top: 1px solid grey;
+            overflow: hidden;
+
+        }
+
+        .right {
+            padding-right: 0px;
+        }
+
+        .details {
+
+            font-size: 16px;
+            font-style: italic;
+            border-top: 1px solid grey;
+            padding-top: 16px;
+        }
+
+        .cv {
+            border-top: none;
+        }
+
+
+        /* Drop Down and Back button Styling */
+
+        #back {
+            font-color: #0F0F0F;
+            font-family: helvetica neue, helvetica, sans-serif;
+            ;
+            font-size: 14px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            padding: 6px;
+            border-radius: 0px;
+            border: 1px solid black;
+            padding-right: 40px;
+
+
+        }
+
+
+
+        #type-selector {
+
+            font-color: #0F0F0F;
+            font-family: helvetica neue, helvetica, sans-serif;
+            ;
+            font-size: 16px;
+            margin-bottom: 20px;
+            padding: 5px;
+            border-radius: 0px;
+            cursor: pointer;
+
+        }
+
+
+        /* Filterable table */
+        /* Add the "filter" class to the input field to enable filtering */
+        .filterable input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+
+
+        }
+
+        /* Style the filterable table */
+        .filterable {
+            margin-bottom: 10px;
+            border-top: solid 1px grey;
+        }
+
+
+        .cursor {
+            cursor: pointer;
+        }
+
+
+        .thumb {
+            width: 100%;
+            max-width: 150px;
+            min-width: 90px;
+
+        }
+
+        .column_cv {
+
+            font-family: helvetica neue, helvetica, sans-serif;
+            ;
+            display: block;
+            padding-bottom: 20px;
+            padding-right: 20px;
+            float: left;
+            width: 50%;
+            font-size: 18px;
+            line-height: 24px;
+            overflow: hidden;
+        }
+
+        .left_cv {
+            width: 20%;
+            font-size: 18px;
+
+        }
+
+        .right_cv {
+            width: 80%;
+        }
+
+        li {
+            list-style-position: outside;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 500px) {
+
+
+            .hide-on-small {
+                display: none;
+            }
+
+
+            #card {
+                display: none;
+            }
+
+            .container.left {
+                padding: 0px;
+
+            }
+
+            header {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+
+            .column_project {
+
+                padding-right: 0px;
+
+            }
+
+            .container.chat {
+                display: none;
+            }
+
+            .container.projects {
+
+                padding-left: 5px;
+                padding-right: 0px;
+            }
+
+
+
+        }
+
+        /* Responsive styling */
+        @media (max-width: 740px) {
+
+
+            .hide-on-medium {
+                display: none;
+            }
+
+
+            .column_project {
+                width: 100%;
+            }
+
+
+            .fixed-column {
+                width: 100%;
+                max-width: 90%;
+                max-height: 200px;
+            }
+
+
+        }
+
+        /* Responsive styling */
+        @media (max-width: 1100px) {
+
+            .hide-on-big {
+                display: none;
+            }
+
+            .container.chat {
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            .container.left {
+                width: 100%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- Sketch Test
+<img id="card"  src="img/sketch.png" alt="Sketch"></img> -->
+
+
+    <!-- Header (Name and Bio)-->
+
+    <header>
+
+
+
+
+
+    </header>
+
+    <main>
+
+
+
+        <div class="container left">
+
+
+
+            <table class="filterable">
+                <thead>
+                    <tr>
+                        <th>Project</th>
+                        <th class="type">Type</th>
+                        <th class="type hide-on-medium">With</th>
+
+                        <th class="type hide-on-small">Year</th>
+                        <th class="type hide-on-big">Image</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <!-- Project Row -->
+
+                    <!-- project -->
+                    <tr>
+                        <td>
+                            <div class="hover_img">
+                                <a class="text" href="" target="blank">
+                                    PROJECT TITLE
+
+                                </a>
+                            </div>
+                        </td>
+
+                        <td class="type">kind of work</td>
+                        <td class="hide-on-medium">collaborator</td>
+
+
+                        </td>
+                        <td class="hide-on-small">2025</td>
+                    </tr>
+
+
+
+
+        </div>
+
+
+
+        </div>
+
+    </main>
+
+
+
+
+</body>
+
+
+
+</html>
