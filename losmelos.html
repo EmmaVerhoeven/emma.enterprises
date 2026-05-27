@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Los Melos</title>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: futura, sans-serif;
+            color: rgb(255, 255, 255);
+            background-color: rgb(132, 206, 255);
+        }
+
+        a {
+            color: rgb(0, 101, 195);
+        }
+
+        /* LAYOUT */
+
+        .layout {
+            display: flex;
+        }
+
+        /* SIDEBAR */
+
+        .sidebar {
+            width: 350px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            border-right: 1px solid rgb(255, 255, 255);
+            background-color: rgb(146, 216, 253);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 30px 25px;
+        }
+
+        .sidebar-top {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        /* LOGO */
+
+        .logo {
+            width: 700%;
+            max-width: 250px;
+            align-self: center;
+
+
+        }
+
+        /* MENU */
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-size: 1.7rem;
+            text-align: center;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .barrio {
+            width: 349px;
+
+
+            align-self: center;
+            margin: 0;
+            margin-top: 80px;
+
+            padding: 0px;
+        }
+
+        /* CONTENT */
+
+        .content {
+            margin-left: 350px;
+            width: calc(100% - 350px);
+        }
+
+        section {
+            min-height: 70vh;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: normal;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+        }
+
+        p {
+            max-width: 700px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+
+
+        /* GALLERY */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 20px;
+            max-width: 1400px;
+            width: 100%;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1 / 1;
+            background: #e5e5e5;
+
+        }
+
+        /* AGENDA */
+
+        .agenda {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        .event {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 700px;
+        }
+
+        .event-meta {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .event-title {
+            font-size: 1.6rem;
+            text-decoration: underline;
+            margin: 0;
+        }
+
+        .event-image {
+            width: 100%;
+            height: 220px;
+            background: #e5e5e5;
+            object-fit: cover;
+            display: block;
+        }
+
+        .event-description {
+            margin: 0;
+        }
+
+        .event-link {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 10px 18px;
+            border: 1px solid white;
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            align-self: flex-start;
+        }
+
+        .event-link:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .agenda-loading {
+            font-size: 1.1rem;
+            opacity: 0.7;
+        }
+
+        .contact-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 20px;
+            border: 1px solid black;
+            max-width: fit-content;
+            text-decoration: none;
+            color: black;
+        }
+
+        .contact-button:hover {
+            background: #f2f2f2;
+        }
+
+        details {
+            margin-top: 20px;
+            max-width: 700px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 900px) {
+
+            .layout {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                border-right: none;
+            }
+
+            .content {
+                margin-left: 0;
+                width: 100%;
+            }
+
+
+            .barrio {
+                display: none;
+            }
+
+            section {
+                padding: 30px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .event {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                font-size: 1.3rem;
+                text-align: left;
+            }
+
+            .logo {
+
+                position: absolute;
+                top: 5%;
+                right: 1%;
+                width: 40%;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .event {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-top">
+
+                <!-- PLACEHOLDER LOGO -->
+
+                <img class="logo" src="logowit.svg" alt="Logo">
+
+                <!-- MENU -->
+
+                <nav>
+                    <a href="#agenda">agenda</a>
+                    <a href="#music">muziek</a>
+                    <a href="#contact">contact</a>
+                    <a href="https://www.instagram.com/grupo_los_melos" target="_blank">@grupo_los_melos</a>
+                </nav>
+
+            </div>
+
+            <img class="barrio" src="barrio.png">
+
+
+        </aside>
+
+        <!-- CONTENT -->
+
+        <main class="content">
+
+            <!-- HERO -->
+
+            <section id="home">
+
+                <h2>Los Melos</h2>
+
+                <p>
+                    Los Melos is een salsaband die voornamelijk Colombiaanse salsa speelt.
+                </p>
+
+                <div class="placeholder-box"></div>
+
+                <p>
+                    De bandnaam is geïnspireerd op Nique's debuutalbum <em>A Los Melomanos</em> — een eerbetoon
+                    aan de echte muziekliefhebbers. Los Melos staat voor iedereen die muziek niet alleen hoort,
+                    maar voelt.
+                </p>
+
+
+
+            </section>
+
+            <!-- AGENDA -->
+
+            <section id="agenda">
+
+                <h2>agenda</h2>
+
+                <div class="agenda">
+                    <p class="agenda-loading">Agenda wordt geladen…</p>
+                </div>
+
+            </section>
+
+            <!-- MUSIC -->
+
+            <section id="music">
+
+                <h2>muziek</h2>
+
+                <p>Luister naar <em>A Los Melomanos</em> — het debuutalbum van Nique Quentin dat aan de basis staat van
+                    Los Melos.</p>
+
+                <!-- Spotify album embed -->
+                <iframe data-testid="embed-iframe" style="border-radius:12px"
+                    src="https://open.spotify.com/embed/album/3TxefgEvO3muIk1sZQOaBE?utm_source=generator&theme=0"
+                    width="80%" height="352" frameBorder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
+
+                <h3 style="font-weight: normal; font-size: 1.4rem; margin: 40px 0 20px;">video's</h3>
+
+                <div class="gallery">
+
+                    <!-- YouTube placeholders: vervang de src met echte video embed URLs -->
+                    <div class="gallery-item"
+                        style="background:#000; display:flex; align-items:center; justify-content:center; color:#fff; font-size:0.9rem; text-align:center; padding:10px;">
+                        📹 YouTube video<br><small>[URL volgt]</small>
+                    </div>
+                    <div class="gallery-item"
+                        style="background:#000; display:flex; align-items:center; justify-content:center; color:#fff; font-size:0.9rem; text-align:center; padding:10px;">
+                        📹 YouTube video<br><small>[URL volgt]</small>
+                    </div>
+                    <div class="gallery-item"
+                        style="background:#000; display:flex; align-items:center; justify-content:center; color:#fff; font-size:0.9rem; text-align:center; padding:10px;">
+                        📹 YouTube video<br><small>[URL volgt]</small>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- CONTACT -->
+
+            <section id="contact">
+
+                <h2>contact</h2>
+
+                <p>
+                    Wil je Los Melos boeken voor een evenement, festival of privéfeest?
+                    Neem contact op met onze booker — we komen graag langs.
+                </p>
+
+                <a class="contact-button" href="mailto:booker@email.com">
+                    boeken via e-mail
+                </a>
+
+                <p style="margin-top: 40px;">
+                    Volg ons op Instagram voor het laatste nieuws, beeldmateriaal en aankomende optredens:<br>
+                    <a href="https://www.instagram.com/grupo_los_melos" target="_blank">@grupo_los_melos</a>
+                </p>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script>
+        // Vervang deze URL met jouw Apps Script deployment URL
+        const SHEET_URL = 'https://script.google.com/macros/s/AKfycbyLgRx0H6hMfUvc2J3VFGkFvBB7oEfe9VN_coZWL9wS9-PdPHX9-Qy-NvkQJyQ9y4XV/exec';
+
+        async function loadAgenda() {
+            const container = document.querySelector('.agenda');
+
+            try {
+                const res = await fetch(SHEET_URL);
+                if (!res.ok) throw new Error('Netwerk response niet ok');
+                const events = await res.json();
+
+                if (events.length === 0) {
+                    container.innerHTML = '<p>Geen optredens gepland. Volg ons op Instagram voor updates!</p>';
+                    return;
+                }
+
+                container.innerHTML = events.map(e => `
+                    <div class="event">
+                        <h3 class="event-title">${e.titel}</h3>
+                        <p class="event-meta">${e.datum}${e.venue ? ' — ' + e.venue : ''}${e.stad ? ', ' + e.stad : ''}${e.land ? ' (' + e.land + ')' : ''}</p>
+                        ${e.image
+                        ? `<img class="event-image" src="${e.image}" alt="${e.titel}">`
+                        : `<div class="event-image"></div>`
+                    }
+                        ${e.beschrijving ? `<p class="event-description">${e.beschrijving}</p>` : ''}
+                        ${e.link ? `<a class="event-link" href="${e.link}" target="_blank">meer info</a>` : ''}
+                    </div>
+                `).join('');
+
+            } catch (err) {
+                container.innerHTML = '<p>Agenda kon niet worden geladen. Probeer het later opnieuw.</p>';
+                console.error('Agenda fout:', err);
+            }
+        }
+
+        loadAgenda();
+    </script>
+
+</body>
+
+</html>
