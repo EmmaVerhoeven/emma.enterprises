@@ -96,14 +96,15 @@
 
         /* CONTENT */
 
+
         .content {
             margin-left: 350px;
             width: calc(100% - 350px);
         }
 
         section {
-            min-height: 70vh;
-            padding: 80px;
+
+            padding: 40px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -117,13 +118,32 @@
 
         h2 {
             font-size: 2.2rem;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         p {
             max-width: 700px;
             font-size: 1.1rem;
             line-height: 1.6;
+        }
+
+
+
+        .bandimg {
+            width: 100%;
+            max-width: 650px;
+            margin-top: 40px;
+
+
+
+        }
+
+
+        .notebreak {
+            display: block;
+            text-align: left;
+            margin-left: 60px;
+            padding-top: 20px;
         }
 
 
@@ -157,6 +177,7 @@
             flex-direction: column;
             gap: 10px;
             max-width: 700px;
+            filter: grayscale(100%);
         }
 
         .event-meta {
@@ -173,11 +194,17 @@
 
         .event-image {
             width: 50%;
-            height: 220px;
-            background: #e5e5e5;
+            height: 200px;
+
             object-fit: cover;
             display: block;
+            background-color: #ffffff;
+            border: 1px solid white;
+
+
         }
+
+
 
         .event-description {
             margin: 0;
@@ -300,22 +327,26 @@
 
                 <!-- PLACEHOLDER LOGO -->
 
-                <img class="logo" src="logowit.svg" alt="Logo">
+                <a href="#home"><img class="logo" src="melos/logowit.svg" alt="Logo"></a>
 
                 <!-- MENU -->
 
                 <nav>
                     <a href="#music">music</a>
-                    <a href="#agenda">agenda</a>
+                    <a href="#agenda">events</a>
                     <a href="#contact">contact</a>
                 </nav>
 
             </div>
 
-            <img class="barrio" src="barrio.png">
+            <img class="barrio" src="melos/barrio.png">
 
 
         </aside>
+
+
+
+
 
         <!-- CONTENT -->
 
@@ -325,7 +356,11 @@
 
             <section id="home">
 
+
+
+
                 <h2>grupo Los Melos</h2>
+                <img class="bandimg" src="melos/melitos.png" alt="">
 
                 <p>
                     With band members from the Netherlands, Spain, Venezuela, Italy, Colombia and Germany, Los Melos
@@ -337,6 +372,7 @@
 
             </section>
 
+            <span class="notebreak">🎵</span>
 
             <!-- MUSIC -->
 
@@ -375,19 +411,21 @@
 
             </section>
 
+            <span class="notebreak">🎵</span>
+
             <!-- AGENDA -->
 
             <section id="agenda">
 
-                <h2>agenda</h2>
+                <h2>events</h2>
 
                 <div class="agenda">
-                    <p class="agenda-loading">Agenda wordt geladen…</p>
+                    <p class="agenda-loading">events are loading…</p>
                 </div>
 
             </section>
 
-
+            <span class="notebreak">🎵</span>
 
             <!-- CONTACT -->
 
@@ -396,16 +434,15 @@
                 <h2>contact</h2>
 
                 <p>
-                    Wil je Los Melos boeken voor een evenement, festival of privéfeest?
-                    Neem contact op met onze booker — we komen graag langs.
+                    Do you want to book grupo Los Melos for an event, festival or private party? Contact our booker:
                 </p>
 
                 <a class="contact-button" href="mailto:booker@email.com">
-                    boeken via e-mail
+                    book via e-mail
                 </a>
 
                 <p style="margin-top: 40px;">
-                    Volg ons op Instagram voor het laatste nieuws, beeldmateriaal en aankomende optredens:<br>
+                    Follow us on instagram:<br>
                     <a href="https://www.instagram.com/grupo_los_melos" target="_blank">@grupo_los_melos</a>
                 </p>
 
